@@ -21,13 +21,35 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
 ## 👨‍💻 스터디원 달성률
 <table>
   <tr>
+    <td></td>
+    <td align="center"><b>DFS/BFS</b></td>
+  </tr>
+  <tr>
     <td align="center">
       <a href="https://github.com/nhee0410">
       <img src="https://avatars.githubusercontent.com/u/49919262?v=4?s=100" width="80px;" alt="">
       <br>
       <a href="https://github.com/nhee0410"><sub><b>namhee</b>
     </td>
-    <td rowspan="2">🔘 🔘 🔘</td>
-  <tr/>
+    <td>🔘 🔘</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/henginthere">
+      <img src="https://avatars.githubusercontent.com/henginthere" width="80px;" alt="">
+      <br>
+      <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
+    </td>
+    <td>🟡⚪</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/jdsaeyqo">
+      <img src="https://avatars.githubusercontent.com/jdsaeyqo" width="80px;" alt="">
+      <br>
+      <a href="https://github.com/jdsaeyqo"><sub><b>sangwook</b>
+    </td>
+    <td>🟡⚪⚪</td>
+  </tr>  
 </table>
 
