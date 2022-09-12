@@ -33,7 +33,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/nhee0410"><sub><b>namhee</b>
     </td>
     <td align="center">🔘 🔘</td>
-    <td align="center"></td>    
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
@@ -43,7 +43,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
     </td>
     <td align="center">🟡⚪</td>
-    <td align="center"></td>    
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
@@ -53,7 +53,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/jdsaeyqo"><sub><b>sangwook</b>
     </td>
     <td align="center">🟡⚪⚪</td>
-    <td align="center"></td>    
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
