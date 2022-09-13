@@ -32,6 +32,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center"><b>DFS/BFS</b></td>
     <td align="center"><b>Hash</b></td>    
     <td align="center"><b>문자열</b></td>        
+    <td align="center"><b>수학</b></td>            
   </tr>
   <tr>
     <td align="center">
@@ -43,6 +44,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">🟤🟤</td>    
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
@@ -54,6 +56,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡⚪</td>
     <td align="center">-</td>    
     <td align="center">-</td>    
+    <td align="center">-</td>
   </tr>
   <tr>
     <td align="center">
@@ -65,16 +68,18 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡⚪⚪</td>
     <td align="center">-</td>    
     <td align="center">-</td>    
+    <td align="center">-</td>    
   </tr>  
   <tr>
     <td align="center">
       <a href="https://github.com/forlivd">
       <img src="https://avatars.githubusercontent.com/forlivd" width="80px;" alt="">
       <br>
-      <a href="https://github.com/forlivd"><sub><b>forlivd</b>
+      <a href="https://github.com/forlivd"><sub><b>jaehyeong</b>
     </td>
     <td align="center">⚪⚪</td>
     <td align="center">-</td>   
+    <td align="center">-</td>    
     <td align="center">-</td>    
   </tr>
   <tr>
@@ -87,5 +92,19 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡</td>
     <td align="center">🟤</td>    
     <td align="center">-</td>    
+    <td align="center">-</td>    
   </tr>    
+  <tr>
+    <td align="center">
+      <a href="https://github.com/JeongBJ">
+      <img src="https://avatars.githubusercontent.com/JeongBJ" width="80px;" alt="">
+      <br>
+      <a href="https://github.com/JeongBJ"><sub><b>bongjin</b>
+    </td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+    <td align="center">-</td>    
+    <td align="center">🟤</td>    
+  </tr>      
+  
 </table>
