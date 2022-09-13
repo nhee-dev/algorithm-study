@@ -31,6 +31,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td></td>
     <td align="center"><b>DFS/BFS</b></td>
     <td align="center"><b>Hash</b></td>    
+    <td align="center"><b>문자열</b></td>        
   </tr>
   <tr>
     <td align="center">
@@ -39,8 +40,9 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/nhee0410"><sub><b>namhee</b>
     </td>
-    <td align="center">🔘 🔘</td>
-    <td align="center">-</td>    
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟤🟤</td>    
   </tr>
   <tr>
     <td align="center">
@@ -50,6 +52,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
     </td>
     <td align="center">🟡⚪</td>
+    <td align="center">-</td>    
     <td align="center">-</td>    
   </tr>
   <tr>
@@ -61,6 +64,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>
     <td align="center">🟡⚪⚪</td>
     <td align="center">-</td>    
+    <td align="center">-</td>    
   </tr>  
   <tr>
     <td align="center">
@@ -71,6 +75,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>
     <td align="center">⚪⚪</td>
     <td align="center">-</td>   
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
@@ -81,5 +86,6 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>
     <td align="center">🟡</td>
     <td align="center">🟤</td>    
+    <td align="center">-</td>    
   </tr>    
 </table>
