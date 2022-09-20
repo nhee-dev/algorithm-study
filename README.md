@@ -34,7 +34,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center"><b>문자열</b></td>        
     <td align="center"><b>구현</b></td>
     <td align="center"><b>조합론</b></td>
-    <td align="center"><b>수학</b></td>            
+    <td align="center"><b>수학</b></td>
+    <td align="center"><b>완전탐색</b></td>    
   </tr>
   <tr>
     <td align="center">
@@ -48,7 +49,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟤🟤</td>    
     <td align="center">-</td>    
     <td align="center">-</td>    
-    <td align="center">-</td>        
+    <td align="center">-</td>
+    <td align="center">🟤</td>
   </tr>
   <tr>
     <td align="center">
@@ -62,7 +64,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
     <td align="center">-</td>
     <td align="center">-</td>    
-    <td align="center">-</td>        
+    <td align="center">-</td>     
+    <td align="center">-</td>    
   </tr>
   <tr>
     <td align="center">
@@ -76,7 +79,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
     <td align="center">⚪</td>
     <td align="center">🟡</td>    
-    <td align="center">-</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>    
   </tr>  
   <tr>
     <td align="center">
@@ -90,6 +94,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
+    <td align="center">-</td> 
     <td align="center">-</td>    
   </tr>
   <tr>
@@ -105,6 +110,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>
+    <td align="center">-</td>    
 </tr>    
   <tr>
     <td align="center">
@@ -118,7 +124,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
-    <td align="center">🟤</td>    
+    <td align="center">🟤</td>
+    <td align="center">-</td>    
   </tr>      
   
 </table>
