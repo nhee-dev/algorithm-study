@@ -1,0 +1,50 @@
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        
+        HashMap<String, Integer> genreCnt = new HashMap<>();
+        
+        for(int i=0;i<genres.length;i++){ //장르별 재생 횟수 count
+            genreCnt.put(genres[i],genreCnt.getOrDefault(genres[i],0)+plays[i]);
+        }
+        
+        ArrayList<String> genreList = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for(String x:genreCnt.keySet()){
+            genreList.add(x);
+        }
+        
+        Collections.sort(genreList,(o1,o2)->genreCnt.get(o2)-genreCnt.get(o1));
+        
+        for(int i=0;i<genreList.size();i++){
+            int max = 0;
+            int f_index = -1;
+            String g = genreList.get(i);
+            for(int j=0;j<genres.length;j++){
+                if(g.equals(genres[j])&&max<plays[j]){
+                    max = plays[j];
+                    f_index=j;
+                }
+            }
+            max = 0;
+            int s_index = -1;
+            for(int j=0;j<genres.length;j++){
+                if(g.equals(genres[j])&&max<plays[j]&&f_index!=j){
+                    max = plays[j];
+                    s_index=j;
+                }
+            }
+            
+            list.add(f_index);
+            if(s_index>=0) list.add(s_index);
+        }
+        
+        
+        
+        int[] answer = new int[list.size()];
+        for(int i=0;i<answer.length;i++){
+            answer[i]=list.get(i);
+        }
+        return answer;
+    }
+}

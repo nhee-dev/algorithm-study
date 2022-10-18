@@ -1,0 +1,19 @@
+import java.util.*;
+class Solution {
+    public int solution(int[] nums) {
+        
+        int max = nums.length/2;
+        int answer = 0;
+        
+        HashSet<Integer> hashSet = new HashSet<>();
+        
+        for(int x:nums){
+            hashSet.add(x);
+        }
+        
+        if(hashSet.size()<max) answer=hashSet.size();
+        else answer = max;
+        
+        return answer;
+    }
+}
