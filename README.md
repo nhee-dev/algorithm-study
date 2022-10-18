@@ -30,6 +30,8 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
   <tr>
     <td></td>
     <td align="center"><b>DFS/BFS</b></td>
+    <td align="center"><b>스택/큐</b></td>
+    <td align="center"><b>그래프</b></td>
     <td align="center"><b>Hash</b></td>    
     <td align="center"><b>문자열</b></td>        
     <td align="center"><b>구현</b></td>
@@ -37,6 +39,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center"><b>수학</b></td>
     <td align="center"><b>완전탐색</b></td>    
     <td align="center"><b>DP</b></td>    
+    <td align="center"><b>Greedy</b></td>        
   </tr>
   <tr>
     <td align="center">
@@ -46,13 +49,16 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/nhee0410"><sub><b>namhee</b>
     </td>
     <td align="center">-</td>
+    <td align="center">-</td>    
+    <td align="center">-</td>        
     <td align="center">-</td>
     <td align="center">🟤🟤</td>    
     <td align="center">-</td>    
     <td align="center">-</td>    
-    <td align="center">-</td>
     <td align="center">🟤</td>
+    <td align="center">🟤⚪</td>
     <td align="center">-</td>    
+    <td align="center">-</td>        
   </tr>
   <tr>
     <td align="center">
@@ -61,7 +67,9 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
     </td>
-    <td align="center">🟡⚪⚪⚪</td>
+    <td align="center">🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">⚪</td> 
+    <td align="center">-</td>        
     <td align="center">-</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
@@ -69,6 +77,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>     
     <td align="center">-</td>
     <td align="center">-</td>    
+    <td align="center">⚪</td>        
   </tr>
   <tr>
     <td align="center">
@@ -77,14 +86,17 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/jdsaeyqo"><sub><b>sangwook</b>
     </td>
-    <td align="center">🟡⚪⚪</td>
+    <td align="center">🟡🟡<br/>⚪⚪</td>
+    <td align="center">-</td>    
+    <td align="center">⚪</td>        
     <td align="center">-</td>    
     <td align="center">-</td>    
-    <td align="center">⚪</td>
-    <td align="center">🟡</td>    
+    <td align="center">🟡⚪</td>
+    <td align="center">🟡⚪</td>    
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
+    <td align="center">-</td>        
   </tr>  
   <tr>
     <td align="center">
@@ -93,14 +105,17 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/forlivd"><sub><b>jaehyeong</b>
     </td>
-    <td align="center">⚪⚪⚪⚪</td>
+    <td align="center">⚪⚪⚪⚪⚪⚪⚪⚪</td>
+    <td align="center">-</td>    
+    <td align="center">-</td>        
     <td align="center">-</td>   
     <td align="center">-</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
     <td align="center">-</td> 
     <td align="center">-</td>
-    <td align="center">-</td>    
+    <td align="center">-</td>
+    <td align="center">-</td>        
   </tr>
   <tr>
     <td align="center">
@@ -110,13 +125,16 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/SangWoo-Han97"><sub><b>sangwoo</b>
     </td>
     <td align="center">🟡🟡⚪</td>
+    <td align="center">⚪🟤</td>    
+    <td align="center">-</td>        
     <td align="center">🟤</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">-</td>
+    <td align="center">🟤</td>
     <td align="center">-</td>    
+    <td align="center">-</td>        
 </tr>    
   <tr>
     <td align="center">
@@ -125,14 +143,17 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/JeongBJ"><sub><b>bongjin</b>
     </td>
-    <td align="center">-</td>
+    <td align="center">🟡</td>
+    <td align="center">-</td>    
+    <td align="center">-</td>        
     <td align="center">-</td>    
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
     <td align="center">🟤</td>
     <td align="center">-</td>
-    <td align="center">⚪</td>    
+    <td align="center">⚪⚪</td>    
+    <td align="center">-</td>        
   </tr>      
   
 </table>
