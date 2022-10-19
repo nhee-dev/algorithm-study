@@ -1,0 +1,29 @@
+https://snowoo.tistory.com/58
+
+		Queue<Integer> q = new LinkedList<>();
+		q.add(start);
+		
+		while(!q.isEmpty())
+		{
+			int now = q.poll();
+			if(now == k)
+			{
+				break;
+			}
+			
+			int moves[] = {now-1, now+1, now*2};  // ÀÌµ¿À» ¹è¿­¿¡ ´ã¾Æ »ç¿ëÁ™´Ù.
+			for(int i=0;i<3;i++)
+			{
+				int next = moves[i];
+				if(next>=0 && next<=100000 && dist[next] == 0)
+				{
+					q.add(next);
+					dist[next] = dist[now] + 1;
+				}
+			}
+		}
+
+--------------------------------------------------------------------------------------------
+
+이동을 배열에 담아 사용헀다.
+이로 인해 if 문을 하나로 줄일 수 있다.
