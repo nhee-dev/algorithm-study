@@ -1,0 +1,24 @@
+def solution(answers):
+    person_1=[1,2,3,4,5]
+    person_2=[2,1,2,3,2,4,2,5]
+    person_3=[3,3,1,1,2,2,4,4,5,5]
+    
+    answer_1=0
+    answer_2=0
+    answer_3=0
+    
+    for index, i in enumerate(answers):
+        if person_1[index%5]==i:
+            answer_1+=1
+        if person_2[index%8]==i:
+            answer_2+=1
+        if person_3[index%10]==i:
+            answer_3+=1
+    count_dict={1:answer_1, 2:answer_2, 3: answer_3}
+    max_score=max(count_dict.values())
+    result=[]
+    for student, score in count_dict.items():
+        if score==max_score:
+            result.append(student)
+
+    return result
