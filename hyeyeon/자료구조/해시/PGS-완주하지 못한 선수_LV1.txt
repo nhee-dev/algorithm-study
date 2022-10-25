@@ -1,0 +1,13 @@
+def solution(participant, completion):
+    
+    dic={}
+    
+    for x in participant:
+        dic[x]=dic.get(x,0)+1
+    
+    for x in completion:
+        dic[x]=dic.get(x)-1
+    
+    for key,value in dic.items():
+        if(value>0):
+            return key
