@@ -40,6 +40,10 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center"><b>완전탐색</b></td>    
     <td align="center"><b>DP</b></td>    
     <td align="center"><b>Greedy</b></td>        
+    <td align="center"><b>정렬</b></td>        
+    <td align="center"><b>Union-Find</b></td>
+    <td align="center"><b>Heap</b></td>
+    <td align="center"><b>백트래킹</b></td>    
   </tr>
   <tr>
     <td align="center">
@@ -53,12 +57,16 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>        
     <td align="center">-</td>
     <td align="center">🟤🟤</td>    
-    <td align="center">-</td>    
+    <td align="center">🟤🟤🟤⚪</td>    
     <td align="center">-</td>    
     <td align="center">🟤</td>
     <td align="center">🟤⚪</td>
     <td align="center">-</td>    
+    <td align="center">⚪</td>   
+    <td align="center">-</td>    
     <td align="center">-</td>        
+    <td align="center">-</td>        
+    <td align="center">-</td>            
   </tr>
   <tr>
     <td align="center">
@@ -67,17 +75,21 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
     </td>
-    <td align="center">🟡🟡<br/>⚪⚪⚪</td>
-    <td align="center">⚪</td> 
+    <td align="center">🟡🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">⚪⚪</td> 
     <td align="center">-</td>        
-    <td align="center">-</td>    
+    <td align="center">🟤🟤⚪⚪🟡</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
     <td align="center">-</td>    
     <td align="center">-</td>     
-    <td align="center">-</td>
+    <td align="center">🟤</td>
     <td align="center">-</td>    
-    <td align="center">⚪</td>        
+    <td align="center">⚪</td>   
+    <td align="center">-</td>    
+    <td align="center">-</td>    
+    <td align="center">-</td>        
+    <td align="center">-</td>            
   </tr>
   <tr>
     <td align="center">
@@ -94,9 +106,13 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡⚪</td>
     <td align="center">🟡⚪</td>    
     <td align="center">-</td>
-    <td align="center">-</td>
+    <td align="center">⚪</td>
     <td align="center">-</td>    
     <td align="center">-</td>        
+    <td align="center">-</td>    
+    <td align="center">🟡🟡</td>        
+    <td align="center">⚪</td>        
+    <td align="center">⚪</td>            
   </tr>  
   <tr>
     <td align="center">
@@ -106,16 +122,20 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <a href="https://github.com/forlivd"><sub><b>jaehyeong</b>
     </td>
     <td align="center">⚪⚪⚪⚪⚪⚪⚪⚪</td>
-    <td align="center">-</td>    
+    <td align="center">⚪</td>    
     <td align="center">-</td>        
     <td align="center">-</td>   
     <td align="center">-</td>    
     <td align="center">-</td>    
     <td align="center">-</td>
-    <td align="center">-</td> 
+    <td align="center">⚪</td> 
     <td align="center">-</td>
     <td align="center">-</td>
+    <td align="center">-</td>    
+    <td align="center">⚪⚪⚪</td>    
     <td align="center">-</td>        
+    <td align="center">-</td>        
+    <td align="center">-</td>            
   </tr>
   <tr>
     <td align="center">
@@ -126,15 +146,19 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>
     <td align="center">🟡🟡⚪</td>
     <td align="center">⚪🟤</td>    
-    <td align="center">-</td>        
+    <td align="center">🟡🟡</td>        
     <td align="center">🟤</td>    
     <td align="center">-</td>    
+    <td align="center">🟢🟡🟡🟡🟡🟡🟡⚪</td>
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">🟤</td>
+    <td align="center">🟤🟤⚪⚪</td>
     <td align="center">-</td>    
     <td align="center">-</td>        
+    <td align="center">-</td>    
+    <td align="center">-</td>        
+    <td align="center">⚪</td>        
+    <td align="center">-</td>            
 </tr>    
   <tr>
     <td align="center">
@@ -143,17 +167,21 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
       <br>
       <a href="https://github.com/JeongBJ"><sub><b>bongjin</b>
     </td>
-    <td align="center">🟡</td>
+    <td align="center">🟡🟡</td>
     <td align="center">-</td>    
-    <td align="center">-</td>        
+    <td align="center">🟡</td>        
     <td align="center">-</td>    
     <td align="center">-</td>
-    <td align="center">-</td>
+    <td align="center">🟤</td>
     <td align="center">-</td>    
     <td align="center">🟤</td>
     <td align="center">-</td>
     <td align="center">⚪⚪</td>    
+    <td align="center">-</td>  
+    <td align="center">⚪</td>    
     <td align="center">-</td>        
+    <td align="center">-</td>        
+    <td align="center">-</td>            
   </tr>      
   
 </table>
