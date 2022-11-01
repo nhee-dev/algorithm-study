@@ -1,0 +1,47 @@
+import java.util.*;
+class Solution {
+    public boolean[] visited;
+    public int[][] map;
+    public Queue<Integer> queue;
+    public int solution(int n, int[][] wires) {
+        int answer = Integer.MAX_VALUE;
+        queue = new LinkedList<>();
+        map = new int[n][n];
+        
+        for(int i=0;i<wires.length;i++){
+            //연결 노드 입력
+            map[wires[i][0]-1][wires[i][1]-1]=1;
+            map[wires[i][1]-1][wires[i][0]-1]=1;
+        }
+        
+        //하나씩 연결 끊으면서 bfs
+        for(int i=0;i<wires.length;i++){
+            map[wires[i][0]-1][wires[i][1]-1]=0;
+            map[wires[i][1]-1][wires[i][0]-1]=0;
+            int cnt = bfs(wires[i][0]-1,n);
+            answer = Math.min(answer,Math.abs(2*cnt-n));
+            map[wires[i][0]-1][wires[i][1]-1]=1;
+            map[wires[i][1]-1][wires[i][0]-1]=1;
+        }
+        return answer;
+    }
+    public int bfs(int start, int n){
+        visited = new boolean[n];
+        int cnt=1;
+        queue.offer(start);
+        
+        while(!queue.isEmpty()){
+            int node = queue.poll();
+            visited[node]=true;
+            for(int i=0;i<n;i++){
+                if(map[node][i]==1||map[i][node]==1){
+                   if(!visited[i]){
+                    queue.offer(i); 
+                    cnt++;
+                   }
+                }
+            } 
+        }
+        return cnt;
+    }
+}
