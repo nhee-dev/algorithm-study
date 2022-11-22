@@ -1,10 +1,10 @@
-package com.ssafy.lib.bfs;
+package com.example.lib.java.dfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
-import java.util.*;
 
 public class boj12851 {
 
