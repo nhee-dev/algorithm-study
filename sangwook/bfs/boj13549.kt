@@ -1,4 +1,4 @@
-package com.ssafy.lib.bfs
+package com.example.lib.java.dfs
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
