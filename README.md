@@ -28,167 +28,204 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
 
 <table>
   <tr>
-    <td></td>
-    <td align="center"><b>DFS/BFS</b></td>
-    <td align="center"><b>스택/큐</b></td>
-    <td align="center"><b>그래프</b></td>
-    <td align="center"><b>Hash</b></td>    
-    <td align="center"><b>문자열</b></td>        
-    <td align="center"><b>구현</b></td>
-    <td align="center"><b>조합론</b></td>
-    <td align="center"><b>수학</b></td>
-    <td align="center"><b>완전탐색</b></td>    
-    <td align="center"><b>DP</b></td>    
-    <td align="center"><b>Greedy</b></td>        
-    <td align="center"><b>정렬</b></td>        
-    <td align="center"><b>Union-Find</b></td>
-    <td align="center"><b>Heap</b></td>
-    <td align="center"><b>백트래킹</b></td>    
-    <td align="center"><b>시뮬</b></td>        
-  </tr>
-  <tr>
+    <td></td>   
     <td align="center">
       <a href="https://github.com/nhee0410">
-      <img src="https://avatars.githubusercontent.com/u/49919262?v=4?s=100" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/u/49919262?v=4?s=100" width="100px;" alt="">
       <br>
       <a href="https://github.com/nhee0410"><sub><b>namhee</b>
-    </td>
-    <td align="center">-</td>
-    <td align="center">-</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>
-    <td align="center">⚪⚪🟤🟤</td>    
-    <td align="center">⚪🟤🟤🟤</td>    
-    <td align="center">-</td>    
-    <td align="center">🟤</td>
-    <td align="center">⚪🟤</td>
-    <td align="center">-</td>    
-    <td align="center">⚪</td>   
-    <td align="center">-</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>        
-    <td align="center">-</td>            
-    <td align="center">-</td>                
-  </tr>
-  <tr>
+    </td>    
     <td align="center">
       <a href="https://github.com/henginthere">
-      <img src="https://avatars.githubusercontent.com/henginthere" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/henginthere" width="100px;" alt="">
       <br>
       <a href="https://github.com/henginthere"><sub><b>hyeyeon</b>
     </td>
-    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪</td>
-    <td align="center">⚪⚪</td> 
-    <td align="center">-</td>        
-    <td align="center">🟡⚪⚪🟤🟤</td>    
-    <td align="center">-</td>    
-    <td align="center">⚪</td>
-    <td align="center">-</td>    
-    <td align="center">-</td>     
-    <td align="center">🟤⚪⚪</td>
-    <td align="center">-</td>    
-    <td align="center">⚪</td>   
-    <td align="center">⚪⚪🟤</td>    
-    <td align="center">-</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>        
-    <td align="center">-</td>                
-  </tr>
-  <tr>
-    <td align="center">
+     <td align="center">
       <a href="https://github.com/jdsaeyqo">
-      <img src="https://avatars.githubusercontent.com/jdsaeyqo" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/jdsaeyqo" width="100px;" alt="">
       <br>
       <a href="https://github.com/jdsaeyqo"><sub><b>sangwook</b>
-    </td>
-    <td align="center">🟡🟡<br/>⚪⚪</td>
-    <td align="center">-</td>    
-    <td align="center">⚪</td>        
-    <td align="center">-</td>    
-    <td align="center">-</td>    
-    <td align="center">🟡⚪</td>
-    <td align="center">🟡⚪</td>    
-    <td align="center">-</td>
-    <td align="center">⚪</td>
-    <td align="center">-</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>    
-    <td align="center">🟡🟡🟡🟡</td>        
-    <td align="center">⚪</td>        
-    <td align="center">⚪</td>        
-    <td align="center">🟡🟡⚪⚪⚪⚪⚪🟤</td>                
-  </tr>  
-  <tr>
+    </td>       
     <td align="center">
       <a href="https://github.com/forlivd">
-      <img src="https://avatars.githubusercontent.com/forlivd" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/forlivd" width="100px;" alt="">
       <br>
       <a href="https://github.com/forlivd"><sub><b>jaehyeong</b>
     </td>
-    <td align="center">🟡⚪⚪⚪⚪⚪⚪⚪⚪⚪</td>
-    <td align="center">⚪</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>   
-    <td align="center">⚪</td>    
-    <td align="center">-</td>    
-    <td align="center">-</td>
-    <td align="center">⚪</td> 
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">-</td>    
-    <td align="center">⚪⚪⚪⚪</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>        
-    <td align="center">-</td>          
-    <td align="center">-</td>                
-  </tr>
-  <tr>
     <td align="center">
       <a href="https://github.com/SangWoo-Han97">
-      <img src="https://avatars.githubusercontent.com/SangWoo-Han97" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/SangWoo-Han97" width="100px;" alt="">
       <br>
       <a href="https://github.com/SangWoo-Han97"><sub><b>sangwoo</b>
     </td>
-    <td align="center">🟡🟡⚪</td>
-    <td align="center">⚪🟤</td>    
-    <td align="center">🟡🟡⚪</td>        
-    <td align="center">🟤</td>    
-    <td align="center">🟡🟡⚪</td>    
-    <td align="center">🟢🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡⚪</td>
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">⚪⚪⚪🟤🟤🟤</td>
-    <td align="center">🟡</td>    
-    <td align="center">⚪</td>        
-    <td align="center">🟤</td>    
-    <td align="center">-</td>        
-    <td align="center">⚪</td>        
-    <td align="center">-</td>         
-    <td align="center">-</td>                
-</tr>    
-  <tr>
     <td align="center">
       <a href="https://github.com/JeongBJ">
-      <img src="https://avatars.githubusercontent.com/JeongBJ" width="80px;" alt="">
+      <img src="https://avatars.githubusercontent.com/JeongBJ" width="100px;" alt="">
       <br>
       <a href="https://github.com/JeongBJ"><sub><b>bongjin</b>
-    </td>
-    <td align="center">🟡🟡🟡⚪</td>
+    </td>            
+  </tr>
+  <tr>
+    <td align="center"><b>DFS/BFS</b></td> <!-- 5/48 -->
+    <td align="center">-</td>
+    <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪</td>        
+    <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪</td>
+    <td align="center">🟢<br/>🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪</td>
+    <td align="center">🟡🟡🟡<br/>⚪⚪</td>
+  </tr>
+  <tr>
+    <td align="center"><b>구현</b></td> <!-- 5/27 -->
+    <td align="center">⚪<br/>🟤🟤🟤</td>
+    <td align="center">⚪</td>
+    <td align="center">🟡<br/>⚪</td>        
+    <td align="center">-</td>
+    <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">🟤</td>               
+  </tr>
+  <tr>
+    <td align="center"><b>Sort</b></td> <!-- 5/10 -->
+    <td align="center">⚪</td>
+    <td align="center">⚪⚪<br/>🟤</td>
+    <td align="center">-</td>        
+    <td align="center">⚪⚪⚪⚪</td>
+    <td align="center">🟤</td>
+    <td align="center">⚪</td>      
+  </tr>  
+  <tr>
+    <td align="center"><b>완전탐색</b></td> <!-- 4/12 -->
+    <td align="center">⚪<br/>🟤</td>
+    <td align="center">⚪⚪<br/>🟤</td>
+    <td align="center">⚪</td>        
+    <td align="center">-</td>
+    <td align="center">⚪⚪⚪<br/>🟤🟤🟤</td>
+    <td align="center">-</td>             
+  </tr>  
+  <tr>
+    <td align="center"><b>Math</b></td> <!-- 4/8 -->
+    <td align="center">🟤🟤</td>
+    <td align="center">-</td>
+    <td align="center">-</td>        
+    <td align="center">⚪</td>
+    <td align="center">⚪⚪<br/>🟤🟤</td>
+    <td align="center">🟤</td>    
+  </tr>  
+  <tr>
+    <td align="center"><b>String</b></td> <!-- 3/9 -->
+    <td align="center">⚪⚪<br/>🟤🟤</td>
+    <td align="center">-</td>
+    <td align="center">-</td>        
+    <td align="center">⚪</td>
+    <td align="center">🟡🟡🟡<br/>⚪</td>
+    <td align="center">-</td>              
+  </tr>       
+  <tr>
+    <td align="center"><b>Graph</b></td> <!-- 3/5 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">⚪</td>        
+    <td align="center">-</td>
+    <td align="center">🟡🟡<br/>⚪</td>
+    <td align="center">🟡</td>    
+  </tr>
+  <tr>
+    <td align="center"><b>Stack/Q</b></td> <!-- 3/5 -->
+    <td align="center">-</td>
+    <td align="center">⚪⚪</td>
+    <td align="center">-</td>        
+    <td align="center">⚪</td>
+    <td align="center">⚪<br/>🟤</td>
+    <td align="center">-</td>              
+  </tr>     
+  <tr>
+    <td align="center"><b>Greedy</b></td> <!-- 3/3 -->
+    <td align="center">⚪</td>
+    <td align="center">⚪</td>
+    <td align="center">-</td>        
+    <td align="center">-</td>
+    <td align="center">⚪</td>
     <td align="center">-</td>    
-    <td align="center">🟡</td>        
+  </tr>
+  <tr>
+    <td align="center"><b>시뮬레이션</b></td> <!-- 2/10 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪<br/>🟤</td>        
+    <td align="center">⚪</td>
+    <td align="center">-</td>
     <td align="center">-</td>    
+  </tr>  
+  <tr>
+    <td align="center"><b>조합론</b></td> <!-- 2/7 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡<br/>⚪</td>        
+    <td align="center">⚪⚪⚪⚪⚪</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>  
+  <tr>
+    <td align="center"><b>Hash</b></td> <!-- 2/6 -->
+    <td align="center">-</td>
+    <td align="center">🟡<br/>⚪⚪<br/>🟤🟤</td>
+    <td align="center">-</td>        
     <td align="center">-</td>
     <td align="center">🟤</td>
     <td align="center">-</td>    
-    <td align="center">🟤</td>
+  </tr
+  <tr>
+    <td align="center"><b>DP</b></td> <!-- 2/3 -->
     <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>        
+    <td align="center">-</td>
+    <td align="center">🟡</td>
     <td align="center">⚪⚪</td>    
-    <td align="center">-</td>  
-    <td align="center">⚪</td>    
-    <td align="center">-</td>        
-    <td align="center">-</td>        
+  </tr>
+  <tr>
+    <td align="center"><b>Heap</b></td> <!-- 2/3 -->
+    <td align="center">-</td>
+    <td align="center">🟡</td>
+    <td align="center">⚪</td>        
+    <td align="center">-</td>
+    <td align="center">⚪</td>
     <td align="center">-</td>    
-    <td align="center">-</td>                
-  </tr>      
-  
+  </tr>
+  <tr>
+    <td align="center"><b>Union-Find</b></td> <!-- 1/4 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡🟡🟡🟡</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>
+  <tr>
+    <td align="center"><b>Dijkstra</b></td> <!-- 1/4 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡🟡🟡🟡</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>  
+  <tr>
+    <td align="center"><b>Tree</b></td> <!-- 1/2 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡<br/>⚪</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>    
+  <tr>
+    <td align="center"><b>Back-Tracking</b></td> <!-- 1/1 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">⚪</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>
 </table>
