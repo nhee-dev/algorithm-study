@@ -67,9 +67,9 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>            
   </tr>
   <tr>
-    <td align="center"><b>DFS/BFS</b></td> <!-- 5/47 -->
+    <td align="center"><b>DFS/BFS</b></td> <!-- 5/48 -->
     <td align="center">-</td>
-    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
     <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪</td>        
     <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪</td>
     <td align="center">🟢<br/>🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪</td>
@@ -184,9 +184,9 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪</td>    
   </tr>
   <tr>
-    <td align="center"><b>Heap</b></td> <!-- 2/2 -->
+    <td align="center"><b>Heap</b></td> <!-- 2/3 -->
     <td align="center">-</td>
-    <td align="center">-</td>
+    <td align="center">🟡</td>
     <td align="center">⚪</td>        
     <td align="center">-</td>
     <td align="center">⚪</td>
