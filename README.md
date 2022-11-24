@@ -67,16 +67,16 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>            
   </tr>
   <tr>
-    <td align="center"><b>DFS/BFS</b></td>
+    <td align="center"><b>DFS/BFS</b></td> <!-- 5/28 -->
     <td align="center">-</td>
     <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪</td>
     <td align="center">🟡🟡<br/>⚪⚪</td>        
-    <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪</td>
+    <td align="center">🟡<br/>⚪⚪⚪⚪<br/>⚪⚪⚪⚪<br/>⚪</td>
     <td align="center">🟡🟡<br/>⚪</td>
     <td align="center">🟡🟡🟡<br/>⚪</td>
   </tr>
   <tr>
-    <td align="center"><b>구현</b></td>
+    <td align="center"><b>구현</b></td> <!-- 5/20 -->
     <td align="center">⚪<br/>🟤🟤🟤</td>
     <td align="center">⚪</td>
     <td align="center">🟡<br/>⚪</td>        
@@ -85,7 +85,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟤</td>               
   </tr>
   <tr>
-    <td align="center"><b>완전탐색</b></td>
+    <td align="center"><b>완전탐색</b></td> <!-- 4/12 -->
     <td align="center">⚪<br/>🟤</td>
     <td align="center">⚪⚪<br/>🟤</td>
     <td align="center">⚪</td>        
@@ -94,7 +94,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>             
   </tr>  
   <tr>
-    <td align="center"><b>Sort</b></td>
+    <td align="center"><b>Sort</b></td> <!-- 4/9 -->
     <td align="center">-</td>
     <td align="center">⚪⚪<br/>🟤</td>
     <td align="center">-</td>        
@@ -103,7 +103,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪</td>      
   </tr>
   <tr>
-    <td align="center"><b>String</b></td>
+    <td align="center"><b>String</b></td> <!-- 3/8 -->
     <td align="center">⚪⚪<br/>🟤🟤</td>
     <td align="center">-</td>
     <td align="center">-</td>        
@@ -112,7 +112,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>              
 </tr>    
   <tr>
-    <td align="center"><b>Stack/Q</b></td>
+    <td align="center"><b>Stack/Q</b></td> <!-- 3/5 -->
     <td align="center">-</td>
     <td align="center">⚪⚪</td>
     <td align="center">-</td>        
@@ -121,7 +121,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>              
   </tr>      
   <tr>
-    <td align="center"><b>Graph</b></td>
+    <td align="center"><b>Graph</b></td> <!-- 3/5 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">⚪</td>        
@@ -130,7 +130,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡</td>    
   </tr>
   <tr>
-    <td align="center"><b>Greedy</b></td>
+    <td align="center"><b>Greedy</b></td> <!-- 3/3 -->
     <td align="center">⚪</td>
     <td align="center">⚪</td>
     <td align="center">-</td>        
@@ -139,7 +139,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>
   <tr>
-    <td align="center"><b>Math</b></td>
+    <td align="center"><b>Math</b></td> <!-- 3/3 -->
     <td align="center">🟤</td>
     <td align="center">-</td>
     <td align="center">-</td>        
@@ -148,7 +148,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟤</td>    
   </tr>
   <tr>
-    <td align="center"><b>Hash</b></td>
+    <td align="center"><b>Hash</b></td> <!-- 2/6 -->
     <td align="center">-</td>
     <td align="center">🟡<br/>⚪⚪<br/>🟤🟤</td>
     <td align="center">-</td>        
@@ -157,7 +157,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr
   <tr>
-    <td align="center"><b>DP</b></td>
+    <td align="center"><b>DP</b></td> <!-- 2/3 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>        
@@ -166,7 +166,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪</td>    
   </tr>
   <tr>
-    <td align="center"><b>Heap</b></td>
+    <td align="center"><b>Heap</b></td> <!-- 2/2 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">⚪</td>        
@@ -176,7 +176,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
   </tr>
 
   <tr>
-    <td align="center"><b>시뮬레이션</b></td>
+    <td align="center"><b>시뮬레이션</b></td> <!-- 1/8 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">🟡🟡<br/>⚪⚪⚪⚪⚪<br/>🟤</td>        
@@ -185,7 +185,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>
   <tr>
-    <td align="center"><b>Union-Find</b></td>
+    <td align="center"><b>Union-Find</b></td> <!-- 1/4 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">🟡🟡🟡🟡</td>        
@@ -194,7 +194,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>
   <tr>
-    <td align="center"><b>조합론</b></td>
+    <td align="center"><b>조합론</b></td> <!-- 1/2 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">🟡<br/>⚪</td>        
@@ -203,7 +203,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>
   <tr>
-    <td align="center"><b>Back-Tracking</b></td>
+    <td align="center"><b>Back-Tracking</b></td> <!-- 1/1 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">⚪</td>        
