@@ -1,0 +1,46 @@
+import java.util.*;
+class Solution {
+    
+    public int[] solution(String[] operations) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> maxPq = new PriorityQueue<>(Collections.reverseOrder());
+        
+        StringTokenizer st;
+        
+        for(String s:operations){
+            st = new StringTokenizer(s);
+            String doing = st.nextToken();
+            int num = Integer.parseInt(st.nextToken());
+            
+            //빈 큐에 데이터 삭제 요청하면 무시한다
+            if(pq.size()<1&&doing.equals("D")){
+                continue;
+            }
+            
+            if(doing.equals("I")){
+                pq.offer(num);
+                maxPq.offer(num);
+                continue;
+            }
+                if(num==-1){
+                    //최솟값 삭제
+                    int tmp = pq.poll();
+                    maxPq.remove(tmp);
+                    continue;
+                }
+                else{
+                    //최댓값 삭제
+                    int tmp = maxPq.poll();
+                    pq.remove(tmp);
+            }
+        }
+        
+        int[] answer = new int[2];
+        
+        if(pq.size()>0){
+            answer[1]=pq.peek();
+            answer[0]=maxPq.peek();
+        }
+        return answer;
+    }
+}
