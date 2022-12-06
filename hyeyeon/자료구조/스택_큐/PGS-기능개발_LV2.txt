@@ -10,7 +10,6 @@ class Solution {
             if(tmp!=0){
                 finish = finish+1;
             }
-            
             //finish가 큐 제일 앞에 있는 값보다 크면 큐 안에 있는 값 빼고 정답 배열에 개수 넣기
             if(queue.size()==0){
                 queue.add(finish);
