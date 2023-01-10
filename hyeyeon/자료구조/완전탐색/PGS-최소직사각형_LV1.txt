@@ -1,0 +1,53 @@
+class Solution {
+    public int solution(int[][] sizes) {
+        int answer = 0;
+        int len = sizes.length;
+        int max = 0;
+        int max_2 = 0;
+        boolean flag = false; //false일 때는 가로에서 제일 큰 수, true일 때는 세로에서 제일 큰 수
+        //가로세로 합쳐서 제일 큰 수를 구한다.
+        for(int i=0;i<len;i++){
+            int[] tmp = sizes[i];
+            for(int j=0;j<tmp.length;j++){
+                if(max<tmp[j]){
+                    max = tmp[j];
+                    if(j==1) flag = true;
+                }
+            }
+        }
+        //그게 가로라면 tmp[0]<tmp[1]이면서 제일 큰 수보다 작거나 같으면 자리 바꾸기
+        if(!flag){
+            for(int i=0;i<len;i++){
+                int[] tmp = sizes[i];
+                if(tmp[0]<tmp[1]&&tmp[1]<=max){
+                    sizes[i][1]=tmp[0];
+                    sizes[i][0]=tmp[1];
+                }
+            }
+            for(int j=0;j<len;j++){
+                if(max_2<sizes[j][1]){
+                    max_2 = sizes[j][1];
+                }
+            }
+            System.out.println(max+" "+max_2);
+        }
+        //그게 세로라면 tmp[0]>tmp[1]이면서 제일 큰 수보다 작거나 같으면 자리 바꾸기
+        else if(flag){
+            for(int i=0;i<len;i++){
+                int[] tmp = sizes[i];
+                if(tmp[0]>tmp[1]&&tmp[0]<=max){
+                    sizes[i][0]=tmp[1];
+                    sizes[i][1]=tmp[0];
+                }
+            }
+            for(int j=0;j<len;j++){
+                if(max_2<sizes[j][0]){
+                    max_2 = sizes[j][0];
+                }
+            }
+        }
+        //끝까지 다 했으면 반대쪽에서 제일 큰 수 구해서 답 구하기
+
+        return max * max_2;
+    }
+}
