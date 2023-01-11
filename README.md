@@ -67,32 +67,41 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>            
   </tr>
   <tr>
-    <td align="center"><b>DFS/BFS</b></td> <!-- 5/58 -->
+    <td align="center"><b>DFS/BFS</b></td> <!-- 5/64 -->
     <td align="center">-</td>
     <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
-    <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡<br/>⚪⚪⚪⚪</td>        
-    <td align="center">🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪</td>
+    <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡<br/>⚪⚪⚪⚪</td>        
+    <td align="center">🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪</td>
     <td align="center">🟢🟢<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪</td>
-    <td align="center">🟡🟡🟡<br/>⚪⚪⚪</td>
+    <td align="center">🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪</td>
   </tr>
   <tr>
-    <td align="center"><b>구현</b></td> <!-- 5/27 -->
+    <td align="center"><b>구현</b></td> <!-- 5/29 -->
     <td align="center">⚪<br/>🟤🟤🟤</td>
     <td align="center">⚪</td>
-    <td align="center">🟡<br/>⚪</td>        
+    <td align="center">🟡<br/>⚪⚪<br/>🟤</td>
     <td align="center">-</td>
     <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
     <td align="center">🟤</td>               
   </tr>
   <tr>
-    <td align="center"><b>Sort</b></td> <!-- 5/10 -->
+    <td align="center"><b>Sort</b></td> <!-- 5/12 -->
     <td align="center">⚪</td>
     <td align="center">⚪⚪<br/>🟤</td>
     <td align="center">-</td>        
-    <td align="center">⚪⚪⚪⚪</td>
+    <td align="center">⚪⚪⚪⚪⚪<br/>⚪</td>
     <td align="center">🟤</td>
     <td align="center">⚪</td>      
-  </tr>  
+  </tr>
+  <tr>
+    <td align="center"><b>Math</b></td> <!-- 5/9 -->
+    <td align="center">🟤🟤</td>
+    <td align="center">-</td>
+    <td align="center">⚪</td>        
+    <td align="center">⚪</td>
+    <td align="center">⚪⚪<br/>🟤🟤</td>
+    <td align="center">🟤</td>    
+  </tr>    
   <tr>
     <td align="center"><b>완전탐색</b></td> <!-- 4/12 -->
     <td align="center">⚪<br/>🟤</td>
@@ -103,20 +112,11 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>             
   </tr>  
   <tr>
-    <td align="center"><b>Math</b></td> <!-- 4/8 -->
-    <td align="center">🟤🟤</td>
-    <td align="center">-</td>
-    <td align="center">-</td>        
-    <td align="center">⚪</td>
-    <td align="center">⚪⚪<br/>🟤🟤</td>
-    <td align="center">🟤</td>    
-  </tr>  
-  <tr>
     <td align="center"><b>String</b></td> <!-- 3/9 -->
     <td align="center">⚪⚪<br/>🟤🟤</td>
     <td align="center">-</td>
     <td align="center">-</td>        
-    <td align="center">⚪</td>
+    <td align="center">⚪⚪</td>
     <td align="center">🟡🟡🟡<br/>⚪</td>
     <td align="center">-</td>              
   </tr>       
@@ -130,9 +130,9 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡</td>    
   </tr>
   <tr>
-    <td align="center"><b>Stack/Q</b></td> <!-- 3/6 -->
+    <td align="center"><b>Stack/Q</b></td> <!-- 3/7 -->
     <td align="center">-</td>
-    <td align="center">⚪⚪⚪</td>
+    <td align="center">⚪⚪⚪⚪</td>
     <td align="center">-</td>        
     <td align="center">⚪</td>
     <td align="center">⚪<br/>🟤</td>
@@ -157,11 +157,11 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>  
   <tr>
-    <td align="center"><b>조합론</b></td> <!-- 2/8 -->
+    <td align="center"><b>조합론</b></td> <!-- 2/10 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">🟡<br/>⚪</td>        
-    <td align="center">⚪⚪⚪⚪⚪<br/>⚪</td>
+    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪⚪</td>
     <td align="center">-</td>
     <td align="center">-</td>    
   </tr>  
@@ -174,6 +174,15 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟡⚪🟤</td>
     <td align="center">-</td>    
   </tr
+  <tr>
+    <td align="center"><b>Union-Find</b></td> <!-- 2/5 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡🟡🟡🟡</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡</td>    
+  </tr>
   <tr>
     <td align="center"><b>DP</b></td> <!-- 2/4 -->
     <td align="center">-</td>
@@ -202,14 +211,14 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>    
   <tr>
-    <td align="center"><b>Union-Find</b></td> <!-- 1/4 -->
+    <td align="center"><b>이분탐색</b></td> <!-- 1/5 -->
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">🟡🟡🟡🟡</td>        
+    <td align="center">🟢🟢<br/>🟡⚪⚪</td>        
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
-  </tr>
+  </tr>       
   <tr>
     <td align="center"><b>Dijkstra</b></td> <!-- 1/4 -->
     <td align="center">-</td>
@@ -220,15 +229,6 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>  
   <tr>
-    <td align="center"><b>이분탐색</b></td> <!-- 1/3 -->
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">🟡⚪⚪</td>        
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">-</td>    
-  </tr>     
-  <tr>
     <td align="center"><b>Tree</b></td> <!-- 1/2 -->
     <td align="center">-</td>
     <td align="center">-</td>
@@ -238,21 +238,48 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>    
   <tr>
-    <td align="center"><b>Back-Tracking</b></td> <!-- 1/1 -->
+    <td align="center"><b>Back-Tracking</b></td> <!-- 1/2 -->
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">⚪</td>        
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">-</td>    
+    <td align="center">⚪</td>    
   </tr>
   <tr>
-    <td align="center"><b>누적합</b></td> <!-- 1/1 -->
+    <td align="center"><b>누적합</b></td> <!-- 1/2 -->
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">⚪</td>        
+    <td align="center">⚪⚪</td>        
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
   </tr>    
+  <tr>
+    <td align="center"><b>Two-Pointer</b></td> <!-- 1/1 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>   
+  <tr>
+    <td align="center"><b>위상정렬</b></td> <!-- 1/1 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>   
+  <tr>
+    <td align="center"><b>KMP</b></td> <!-- 1/1 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟤</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>   
 </table>

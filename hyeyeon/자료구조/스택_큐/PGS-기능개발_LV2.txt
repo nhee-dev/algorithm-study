@@ -1,0 +1,38 @@
+import java.util.*;
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        ArrayList<Integer> answerList = new ArrayList<>();
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=0;i<progresses.length;i++){
+            int rest = 100-progresses[i];
+            int finish = rest / speeds[i];
+            int tmp = rest % speeds[i];
+            if(tmp!=0){
+                finish = finish+1;
+            }
+            //finish가 큐 제일 앞에 있는 값보다 크면 큐 안에 있는 값 빼고 정답 배열에 개수 넣기
+            if(queue.size()==0){
+                queue.add(finish);
+            }
+            else if(finish>queue.peek()){
+                int release = queue.size();
+                answerList.add(release);
+                queue.clear();
+                queue.add(finish);
+            }
+            //그게 아니라면 그냥 queue에 넣기
+            else{
+                queue.add(finish);
+            }
+            
+            
+        }
+        answerList.add(queue.size());
+        int[] answer = new int[answerList.size()];
+        for(int i=0;i<answerList.size();i++){
+            answer[i] = answerList.get(i);
+            
+        }
+        return answer;
+    }
+}
