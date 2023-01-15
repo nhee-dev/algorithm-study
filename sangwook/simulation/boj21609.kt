@@ -3,7 +3,6 @@ package src.main.kotlin.simulation
 import java.util.StringTokenizer
 
 class boj21609 {
-
     var N = 0
     var M = 0
     lateinit var map: Array<IntArray>
