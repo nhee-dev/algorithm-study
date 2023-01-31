@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        //DP문제.. 해설 보고 넘기자
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String S = br.readLine();
+        int[] dp = new int[S.length()+1];
+
+        int N = Integer.parseInt(br.readLine());
+        Set<String> set = new HashSet<>();
+        for(int i=0;i<N;i++){
+            set.add(br.readLine());
+        }
+
+        //뒤에서부터 substring으로 잘라서 arr에 있는지 확인하고 있으면 해당 dp 배열을 1로 바꾼다
+
+        for(int i=S.length()-1;i>=0;i--){
+            for(int j=i+1;j<S.length();j++){
+                if(dp[j]==1){
+                    if(set.contains(S.substring(i,j))){
+                        dp[i]=1;
+                    }
+                }
+
+            }
+            if(set.contains(S.substring(i))){
+                dp[i]=1;
+            }
+        }
+        //dp[0] 출력
+        System.out.println(dp[0]);
+
+    }
+}
+
+
+
