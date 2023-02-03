@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+
+    static int N,M;
+    static int[] arr, perm;
+    static boolean[] visited;
+    static HashSet<String> set = new HashSet<>();
+    static StringBuilder sb = new StringBuilder();
+
+    static void permutation(int n){
+        if(n==M){
+            StringBuilder sb2 = new StringBuilder();
+            for(int i=0;i<M;i++){
+                sb2.append(perm[i]).append(" ");
+            }
+            String str = sb2.toString();
+            if(!set.contains(str)){ //중복제거
+                set.add(str);
+                sb.append(str).append("\n");
+            }
+            return;
+
+        }
+        for(int i=0;i<N;i++){
+            if(visited[i]) continue;
+            visited[i] = true;
+            perm[n] = arr[i];
+            permutation(n+1);
+            visited[i] = false;
+
+        }
+    }
+    public static void main(String[] args) throws IOException {
+
+        //N개의 자연수 중에서 M개 고르기
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+
+        arr = new int[N];
+        perm = new int[M];
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<N;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(arr);
+
+        visited = new boolean[N];
+
+        permutation(0);
+
+        System.out.println(sb.toString());
+
+
+    }
+}
+
+
+
