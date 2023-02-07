@@ -1,0 +1,23 @@
+class Solution {
+    static int answer = 0;
+
+    public void dfs(int[] numbers, int depth, int target, int sum){
+        //마지막노드까지 도달했을 때 target과 같으면 answer증가
+        if(depth==numbers.length){
+            if(target==sum){
+                answer++;
+            }
+        }
+        else{
+            //더하거나
+            dfs(numbers, depth+1, target, sum+numbers[depth]);
+            //빼거나
+            dfs(numbers, depth+1, target, sum-numbers[depth]);
+        }
+
+    }
+    public int solution(int[] numbers, int target) {
+        dfs(numbers,0,target,0);
+        return answer;
+    }
+}
