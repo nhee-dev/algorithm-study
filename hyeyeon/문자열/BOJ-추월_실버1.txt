@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        //hashmap 두개
+        //key : 차 번호, value : 순서
+        HashMap<String, Integer> input = new HashMap<>();
+        //HashMap<String, Integer> output = new HashMap<>();
+
+        int cnt = 0;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] output = new int[N];
+
+        for(int i=0;i<N;i++){
+            String carNum = br.readLine();
+            input.put(carNum, i);
+        }
+        for(int i=0;i<N;i++){
+            int index = input.get(br.readLine());
+            output[i] = index;
+        }
+
+        for(int i=0;i<N-1;i++){
+            for(int j=i+1;j<N;j++){
+                if(output[i]>output[j]){
+                    cnt++;
+                    break;
+                }
+            }
+        }
+//        for(int i=0;i<N;i++){
+//            String carNum = br.readLine();
+//            output.put(carNum, i);
+//        }
+        //들어갈 때보다 인덱스 작아진 것있으면 ++
+//
+//        for(Map.Entry<String, Integer> entry : input.entrySet()){
+//            String car = entry.getKey();
+//            if(output.get(car)<entry.getValue()){
+//                cnt++;
+//            }
+//        }
+        System.out.println(cnt);
+
+    }
+}
+
+//왜 들어갈 때 인덱스와 나갈 때 인덱스로 답을 구하면 틀리는걸까?
+//들어갈 때 인덱스보다 나갈 때 인덱스가 작다는 것은 추월했다는 거 아닐까..?
+

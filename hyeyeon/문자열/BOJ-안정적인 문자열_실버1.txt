@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        //괄호문제 stack사용
+        //'{'일 때 stack 넣는다
+        //'}'일 때 stack 확인
+        // 비어있으면 '{'로 바꾸고 넣고 cnt++
+        // 아닐땐 stack pop
+        // 끝까지 하고 stack size /2 ( 둘 중 하나만 바꾸면 되니까) + cnt
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Stack<Character> stack;
+
+        int tc = 1;
+        while(true){
+            String input = br.readLine();
+            stack = new Stack<>();
+            int cnt = 0;
+            if(input.contains("-")){
+                break;
+            }
+            for(int i=0;i<input.length();i++){
+                char tmp = input.charAt(i);
+                switch (tmp){
+                    case '{':
+                        stack.push('{');
+                        break;
+                    case '}':
+                        if(stack.isEmpty()){
+                            stack.push('{');
+                            cnt++;
+                        }
+                        else{
+                            stack.pop();
+                        }
+                }
+            }
+            int answer = 0;
+            answer = stack.size()/2 + cnt;
+
+            System.out.println(tc+". "+answer);
+            tc++;
+
+        }
+
+    }
+}
+

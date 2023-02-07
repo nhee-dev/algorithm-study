@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        int total = 0;
+        while(true){
+            String tree = br.readLine();
+            if(tree==null) break;
+            //나무 명 입력 받아서 hashmap에 넣는다.
+            //넣기 전에 hashmap에 그 나무 이름 있는지 검사
+            //있으면 그루 수 ++
+            //없으면 나무 넣기
+            total++;
+            if(hashMap.containsKey(tree)){
+                int cnt = hashMap.get(tree);
+                hashMap.put(tree, cnt + 1);
+            }
+            else{
+                hashMap.put(tree,1);
+            }
+        }
+
+        //정렬
+        Map<String, Integer> sortedMap = new TreeMap<>(hashMap);
+
+        //출력
+        for(Map.Entry<String, Integer> entry: sortedMap.entrySet()){
+            double treeCnt = entry.getValue();
+            System.out.println(entry.getKey()+" "+String.format("%.4f",treeCnt/total*100));
+        }
+
+    }
+}
+
