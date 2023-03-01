@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    static int[] S;
+    static int k;
+    static int[] answer;
+    static boolean[] visited;
+
+    static void getNum(int x, int start){
+
+        if(x==6){
+            for(int i=0;i<6;i++){
+                System.out.print(answer[i]+" ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for(int i=start;i<k;i++){
+            answer[x]=S[i];
+            getNum(x+1, i+1);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        answer = new int[6];
+
+        while(true){
+            st = new StringTokenizer(br.readLine());
+            k = Integer.parseInt(st.nextToken());
+            if(k==0){
+                break;
+            }
+            S = new int[k];
+            answer = new int[6];
+            for(int i=0;i<k;i++){
+                S[i] = Integer.parseInt(st.nextToken());
+            }
+
+            getNum(0,0);
+            System.out.println();
+        }
+    }
+}

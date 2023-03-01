@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    static int F, S, G, U, D;
+    static int[] arr;
+    static Queue<Integer> queue = new LinkedList<>();
+
+    static void bfs(){
+        while(!queue.isEmpty()){
+            int cur = queue.poll(); //현재 층 수
+            if(cur==G) System.out.println(arr[cur]-1);
+            int up = cur+U; //올라간 층
+            int down = cur-D; //내려간 층
+
+
+            if(up<=F && arr[up]==0){ //방문 안 한 층인 경우
+                arr[up] = arr[cur]+1;
+                queue.add(up);
+            }
+            if(down>0 && arr[down]==0){
+                arr[down] = arr[cur]+1;
+                queue.add(down);
+            }
+        }
+        if(arr[G]==0)
+            System.out.println("use the stairs");
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        st = new StringTokenizer(br.readLine());
+        F = Integer.parseInt(st.nextToken());
+        S = Integer.parseInt(st.nextToken());
+        G = Integer.parseInt(st.nextToken());
+        U = Integer.parseInt(st.nextToken());
+        D = Integer.parseInt(st.nextToken());
+
+        arr = new int[F+1]; //총F층으로 이루어진 건물
+        arr[S]=1;
+        queue.add(S);
+        bfs();
+
+    }
+}
