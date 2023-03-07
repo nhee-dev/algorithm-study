@@ -1,0 +1,49 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    static Queue<Integer> bridge;
+    static Queue<Integer> trucks;
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer = 0;
+        bridge = new LinkedList<>();
+        trucks = new LinkedList<>();
+        int sum=0;
+        
+        for(int i=0;i<truck_weights.length;i++){
+            trucks.add(truck_weights[i]);
+        }
+        
+        while(true){
+            if(bridge.isEmpty()){
+                //다리가 비어있을 경우
+                int tmp = trucks.poll();
+                bridge.add(tmp);
+                sum+=tmp;
+                answer++; //다리에 오를 때만 시간 추가
+                break;
+            }
+            else if(bridge.size()==bridge_length) {
+                //다리 길이만큼 트럭이 있으면
+                sum-=bridge.poll(); //보내주기
+            }
+            else{
+                //빈 자리 있으면
+                int tmp = trucks.peek();
+                if(sum+tmp<=weight){
+                    bridge.add(trucks.poll());
+                    sum+=tmp;
+                    answer++;
+                    break;
+                }
+                else{
+                    bridge.add(0);
+                    answer++;
+                }
+            }
+        }
+        
+       
+        return answer+bridge_length;
+    }
+}
