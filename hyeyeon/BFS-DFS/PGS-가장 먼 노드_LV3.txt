@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    
+    static boolean[][] graph;
+    static int n;
+    static Queue<Integer> queue;
+    static boolean[] visited;
+    
+    public int solution(int n, int[][] edge) {
+        int answer = 0;
+        graph = new boolean[n+1][n+1];
+        
+        for(int i=0;i<edge.length;i++){
+            int x = edge[i][0];
+            int y = edge[i][1];
+            graph[x][y] = true;
+            graph[y][x] = true;
+        }
+        
+        queue = new LinkedList<>();
+        visited = new boolean[n+1];
+        queue.add(1);        
+        visited[1] = true;
+        
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i=0;i<size;i++){
+                int tmp = queue.poll();
+                for(int j=1;j<=n;j++){
+                    if(graph[tmp][j] && !visited[j]){
+                        queue.add(j);
+                        visited[j] = true;
+                    }
+                }
+            }
+            answer= size;
+        }
+        return answer;
+    }
+}

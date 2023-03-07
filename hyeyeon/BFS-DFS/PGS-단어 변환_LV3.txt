@@ -1,0 +1,57 @@
+import java.util.*;
+import java.io.*;
+
+class Info{
+    String word;
+    int depth;
+    
+    Info(String word, int depth){
+        this.word = word;
+        this.depth = depth;
+    }
+}
+
+class Solution {
+    
+    static boolean[] visited;
+    static Queue<Info> queue;
+    
+    static int answer;
+
+    static void start(String target, String[] words){
+
+        while(!queue.isEmpty()){
+            Info tmp = queue.poll();
+
+            if(tmp.word.equals(target)){
+                if(answer>tmp.depth) {
+                    answer=tmp.depth;
+                }
+            }
+
+            for(int i=0;i<words.length;i++){
+                int dif=0;
+                for(int j=0;j<tmp.word.length();j++){
+                    if(tmp.word.charAt(j)!=words[i].charAt(j)){
+                        dif++;
+                    }
+                }
+                if(dif==1&&!visited[i]){
+                    queue.add(new Info(words[i],tmp.depth+1));
+                    visited[i]=true;
+                }
+            }  
+        }
+        
+    }
+    public int solution(String begin, String target, String[] words) {
+        answer = Integer.MAX_VALUE;
+        int max = Integer.MAX_VALUE;
+        queue = new LinkedList<>();
+        visited = new boolean[words.length];
+        queue.add(new Info(begin,0));
+        start(target, words);
+        if(answer==max) answer = 0;
+        return answer;
+    }
+}
