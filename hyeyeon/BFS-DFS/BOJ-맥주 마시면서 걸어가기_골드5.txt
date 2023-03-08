@@ -1,0 +1,84 @@
+import java.io.*;
+import java.util.*;
+
+class Point{
+    int x;
+    int y;
+
+    Point(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+public class Main {
+
+    //맨헤튼 거리 안에 갈 수 있는 정점을 연결해준다, 맥주 20개 * 50m = 1000m
+    static ArrayList<Point> arr;
+    static ArrayList<ArrayList<Integer>> graph;
+    static Queue<Integer> queue;
+    static boolean[] visited;
+    static int n, t;
+
+    static boolean bfs(int x, int n){
+        queue.add(x);
+        visited[x]=true;
+
+        while(!queue.isEmpty()){
+            int now = queue.poll();
+
+            if(now==n+1) return true;
+
+
+            for(int nxt : graph.get(now)){
+                if(!visited[nxt]){
+                    visited[nxt]=true;
+                    queue.add(nxt);
+                }
+            }
+
+        }
+        return false;
+
+    }
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        t = Integer.parseInt(br.readLine()); //tc 개수
+
+        for(int i=0;i<t;i++){
+            n = Integer.parseInt(br.readLine());
+            arr = new ArrayList<>();
+            graph = new ArrayList<>();
+            queue = new LinkedList<>();
+            for(int j=0;j<n+2;j++){
+                st = new StringTokenizer(br.readLine());
+                int x = Integer.parseInt(st.nextToken());
+                int y = Integer.parseInt(st.nextToken());
+                arr.add(new Point(x,y));
+            }
+
+            for(int j=0;j<n+2;j++){
+                graph.add(new ArrayList<>());
+            }
+            for(int j=0;j<arr.size();j++){
+                for(int k=j+1;k<arr.size();k++){
+                    if(Math.abs(arr.get(j).x-arr.get(k).x)+Math.abs(arr.get(j).y-arr.get(k).y)<=1000){
+                        graph.get(j).add(k);
+                        graph.get(k).add(j);
+                    }
+                }
+            }
+            visited = new boolean[n+2];
+
+            if(bfs(0,n)) System.out.println("happy");
+            else System.out.println("sad");
+
+        }
+
+    }
+}
+
+
+
