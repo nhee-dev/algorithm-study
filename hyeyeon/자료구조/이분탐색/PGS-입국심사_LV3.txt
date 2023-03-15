@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    public long solution(int n, int[] times) {
+        long answer = Long.MAX_VALUE;
+        Arrays.sort(times);
+        long left = 0;
+        long right = times[times.length-1] * (long)n;
+        
+        while(left<=right){
+            long mid = (left+right) / 2;
+            long complete = 0; //총 심사한 인원
+            for(int i=0;i<times.length;i++){
+                complete += mid/times[i];
+            }
+            if(complete<n){ // 해야할 인원보다 적게 처리했을 때 => 시간이 더 필요하다
+                left = mid+1;
+            }
+            else { //시간 남을 때 => 시간을 줄인다
+                right = mid-1;
+                answer = mid;
+            }
+        }
+        return answer;
+    }
+}

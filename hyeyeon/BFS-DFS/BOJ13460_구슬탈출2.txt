@@ -1,0 +1,146 @@
+import java.util.*;
+import java.io.*;
+
+
+class Position{
+    int rx;
+    int ry;
+    int bx;
+    int by;
+    int cnt;
+
+    public Position(int rx, int ry, int bx, int by, int cnt) {
+        this.rx = rx;
+        this.ry = ry;
+        this.bx = bx;
+        this.by = by;
+        this.cnt = cnt;
+    }
+}
+
+public class Main
+{
+    static int N,M;
+    static char[][] map;
+    static Position curBall;
+    static boolean[][][][] visited;
+    static Queue<Position> queue = new LinkedList<>();
+
+
+    static int[] dx = {0,0,-1,1};
+    static int[] dy = {-1,1,0,0};
+
+    public static int bfs(Position cur){
+        queue.offer(cur);
+        visited[cur.rx][cur.ry][cur.bx][cur.by]=true;
+
+        int ans = -1;
+        while(!queue.isEmpty()){
+            Position tmp = queue.poll();
+            if(tmp.cnt>10) break;
+            else if(map[tmp.rx][tmp.ry]=='O' && map[tmp.bx][tmp.by]!='O') {
+                //빨간색만 구멍
+                ans = tmp.cnt;
+                break;
+            }
+            for(int i=0;i<4;i++){
+                int n_rx = tmp.rx;
+                int n_ry = tmp.ry;
+                int n_bx = tmp.bx;
+                int n_by = tmp.by;
+
+                while(true){ //빨간 구슬 이동
+                    if(map[n_rx][n_ry]!='#' && map[n_rx][n_ry]!='O'){
+                        n_rx += dx[i];
+                        n_ry += dy[i];
+                    }
+                    else{
+                        if(map[n_rx][n_ry]=='#'){
+                            n_rx -= dx[i];
+                            n_ry -= dy[i];
+                        }
+                        break;
+                    }
+
+                }
+                while(true){ //파란 구슬 이동
+                    if(map[n_bx][n_by]!='#' && map[n_bx][n_by]!='O'){
+                        n_bx += dx[i];
+                        n_by += dy[i];
+                    }
+                    else{
+                        if(map[n_bx][n_by]=='#'){
+                            n_bx -= dx[i];
+                            n_by -= dy[i];
+                        }
+                        break;
+                    }
+
+                }
+
+                //빨간공, 파란공 위치 같으면
+                if(n_rx==n_bx && n_ry==n_by){
+                    if(map[n_rx][n_ry]!='O'){
+                        int r_len = Math.abs(tmp.rx-n_rx) + Math.abs(tmp.ry-n_ry);
+                        int b_len = Math.abs(tmp.bx-n_bx) + Math.abs(tmp.by-n_by);
+                        if(r_len>b_len){
+                            n_rx -= dx[i];
+                            n_ry -= dy[i];
+                        }
+                        else{
+                            n_bx -= dx[i];
+                            n_by -= dy[i];
+                        }
+                    }
+
+                }
+
+                if(!visited[n_rx][n_ry][n_bx][n_by]){
+                    visited[n_rx][n_ry][n_bx][n_by] = true;
+                    queue.add(new Position(n_rx,n_ry,n_bx,n_by,tmp.cnt+1));
+                }
+            }
+
+        }
+        return ans;
+
+
+    }
+
+
+
+
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        map = new char[N][M];
+        visited = new boolean[N][M][N][M];
+
+        curBall = new Position(0,0,0,0,0);
+        for(int i=0;i<N;i++){
+            String tmp = br.readLine();
+            for(int j=0;j<M;j++){
+                map[i][j] = tmp.charAt(j);
+                if(map[i][j]=='B'){
+                    curBall.bx = i;
+                    curBall.by = j;
+                }
+                else if(map[i][j]=='R'){
+                    curBall.rx = i;
+                    curBall.ry = j;
+                }
+            }
+        }
+
+        int ans = bfs(curBall);
+
+        System.out.println(ans);
+
+
+    }
+}
