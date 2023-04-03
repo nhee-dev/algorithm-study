@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int number) {
+        int answer = 0;
+        
+        for(int i = 1; i * i <= number; i++) {
+            if(i*i == number) answer += i;
+            else if(number % i == 0) {
+                answer += i;
+                answer += (number/i);
+            }
+        }
+        
+        return answer;
+    }
+}
