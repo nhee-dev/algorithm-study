@@ -1,0 +1,60 @@
+import java.util.*;
+import java.io.*;
+
+public class Solution
+{
+    static int T;
+    static int N,K;
+    static ArrayList<Character> numList;
+    static TreeSet<Integer> treeSet = new TreeSet<>();
+    static void run(){
+        int side = N/4; //한 변에 들어가는 문자 수
+        int rotate = side - 1; //회전 수
+
+        //초기 상태
+        getPass(side);
+
+        //rotate
+        for(int i=0;i<rotate;i++){
+            //제일 뒤에꺼빼서 제일 앞에 넣기
+            char move = numList.get(numList.size()-1);
+            numList.add(0,move);
+            numList.remove(numList.size()-1);
+            getPass(side);
+        }
+    }
+
+    static void getPass(int n){
+        for(int i=0;i<=numList.size()-n;i=i+n){
+            String tmp="";
+            for(int j=0;j<n;j++){
+                tmp+=numList.get(i+j);
+            }
+            treeSet.add(Integer.parseInt(tmp,16));
+        }
+    }
+
+    public static void main(String args[]) throws Exception
+    {
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       T = Integer.parseInt(br.readLine());
+
+       for(int i=1;i<=T;i++){
+           numList = new ArrayList<>();
+           treeSet = new TreeSet<>();
+           StringTokenizer st = new StringTokenizer(br.readLine());
+           N = Integer.parseInt(st.nextToken());
+           K = Integer.parseInt(st.nextToken());
+
+           String tmp = br.readLine();
+           for(int j=0;j<N;j++){
+               numList.add(tmp.charAt(j));
+           }
+
+           run();
+           ArrayList<Integer> getAnswer = new ArrayList<>(treeSet);
+           Collections.sort(getAnswer, (o1,o2) -> o2 - o1); // 내림차순 정렬
+           System.out.println("#"+i+" "+getAnswer.get(K-1));
+       }
+    }
+}
