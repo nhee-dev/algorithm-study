@@ -1,0 +1,104 @@
+import java.util.*;
+import java.io.*;
+
+class Solution
+{
+     static class Cell{
+        int x;
+        int y;
+        int state;
+        int life;
+        int limit;
+
+        Cell(int x, int y, int state, int life, int limit){
+            this.x = x;
+            this.y = y;
+            this.state = state;
+            this.life = life;
+            this.limit = limit; //활성과 동시에 살아있을 수 있는 시간으로 update
+        }
+    }
+
+    static int N, M, K;
+    static List<Cell> cells;
+    static PriorityQueue<Cell> whatCell;
+    static boolean[][] visited;
+    static int[] dx = {0,0,-1,1};
+    static int[] dy = {-1,1,0,0};
+
+
+    static void go(){
+        for(int k=1;k<=K;k++){
+            while(!whatCell.isEmpty()){
+                Cell tmp = whatCell.poll();
+                if(!visited[tmp.x][tmp.y]){
+                    cells.add(new Cell(tmp.x,tmp.y,tmp.state,tmp.life,tmp.limit));
+                    visited[tmp.x][tmp.y]=true;
+                }
+            }
+            for(int i=0;i<cells.size();i++){
+                Cell tmp = cells.get(i);
+                if(tmp.state==0) continue;
+                else if(tmp.state==-1&&tmp.limit==k){
+                    //비활성인데 X시간 지나는 순간이라면
+                    tmp.state = 1; //활성
+                    tmp.limit = tmp.life + k;
+
+                    for(int d=0;d<4;d++){
+                        int nx = tmp.x + dx[d];
+                        int ny = tmp.y + dy[d];
+                        whatCell.add(new Cell(nx,ny,-1,tmp.life,tmp.life+k+1));
+                    }
+                }
+                //활성후 X시간 지나면 죽음
+                else if(tmp.state==1&&tmp.limit==k){
+                    tmp.state = 0;
+                    tmp.limit = 0;
+                }
+            }
+        }
+    }
+
+    static int getAnswer(){
+        int cnt=0;
+        for(int i=0;i<cells.size();i++){
+            if(cells.get(i).state==1||cells.get(i).state==-1)
+                cnt++;
+        }
+        return cnt;
+    }
+	public static void main(String args[]) throws Exception
+	{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        int T = Integer.parseInt(br.readLine());
+
+        for(int tc=1;tc<=T;tc++){
+            st = new StringTokenizer(br.readLine());
+            N = Integer.parseInt(st.nextToken());
+            M = Integer.parseInt(st.nextToken());
+            K = Integer.parseInt(st.nextToken());
+            cells = new ArrayList<>();
+            whatCell = new PriorityQueue<>((o1,o2)->o2.life-o1.life);
+
+            visited = new boolean[N+K*2][M+K*2];
+
+
+            for(int i=0;i<N;i++){
+                st = new StringTokenizer(br.readLine());
+                for(int j=0;j<M;j++){
+                    int cell = Integer.parseInt(st.nextToken());
+                    if(cell>0){
+                        cells.add(new Cell(i+K,j+K,-1,cell,cell));
+                        visited[i+K][j+K] = true;
+                    }
+                }
+            }
+            go();
+            int answer = getAnswer();
+            System.out.println("#"+tc+" "+answer);
+
+        }
+	}
+}
