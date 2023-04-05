@@ -1,0 +1,40 @@
+class Solution {
+    static char[] letters;
+    static boolean done;
+    static int cnt;
+    static String word;
+    static StringBuilder sb = new StringBuilder("     ");
+    
+    public int solution(String inputS) {
+        int answer = 0; cnt = 0; done = false;
+        word = inputS;
+        
+        letters = new char[]{'A','E','I','O','U'};
+        
+        // 해당 단어가 나올 때 까지 조합한다.
+        rec_func(0);
+        
+        answer = cnt;
+        
+        return answer;
+    }
+    
+    static void rec_func(int depth) {
+        if(depth == word.length()) {
+            if((sb.substring(0, word.length())).equals(word)) {
+                done = true;
+                return;
+            }
+        }
+        
+        if(depth == 5) return;
+        
+        for(char c : letters) {
+            sb.setCharAt(depth, c);
+            cnt++;
+            rec_func(depth+1);
+            
+            if(done) return;
+        }
+    }
+}
