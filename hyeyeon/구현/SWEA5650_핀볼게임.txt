@@ -1,0 +1,152 @@
+import java.util.*;
+import java.io.*;
+
+public class Solution
+{
+
+    static class Ball{
+        int x;
+        int y;
+        int d;
+
+        Ball(int x, int y, int d){
+            this.x = x;
+            this.y = y;
+            this.d = d;
+        }
+    }
+
+    static int T, N;
+    static int[][] map;
+    static int ans;
+    static int[][] hall;
+    static int[] dy = {0,1,0,-1};
+    static int[] dx = {-1,0,1,0};
+
+
+    static int go(Ball ball){
+        int cnt=0;
+        int nx = ball.x;
+        int ny = ball.y;
+        int dir = ball.d;
+
+        while(true){
+            nx += dx[dir];
+            ny += dy[dir];
+
+            if(nx<0||nx>=N||ny<0||ny>=N){ //벽에 부딪혔을 때
+                cnt++;
+                dir=(dir+2)%4;
+                continue;
+            }
+
+            if(nx==ball.x&&ny==ball.y){
+                return cnt;
+            }
+
+            int tmp = map[nx][ny];
+            switch (tmp){
+                case -1:
+                    return cnt;
+                case 0:
+                    break;
+                case 1:
+                    cnt++;
+                    if(dir==0||dir==1) dir=(dir+2)%4;
+                    else if(dir==2) dir=1;
+                    else if(dir==3) dir=0;
+                    break;
+                case 2:
+                    cnt++;
+                    if(dir==1||dir==2) dir=(dir+2)%4;
+                    else if(dir==0) dir=1;
+                    else if(dir==3) dir=2;
+                    break;
+                case 3:
+                    cnt++;
+                    if(dir==2||dir==3) dir=(dir+2)%4;
+                    else if(dir==0) dir=3;
+                    else if(dir==1) dir=2;
+                    break;
+                case 4:
+                    cnt++;
+                    if(dir==0||dir==3) dir=(dir+2)%4;
+                    else if(dir==1) dir=0;
+                    else if(dir==2) dir=3;
+                    break;
+                case 5:
+                    cnt++;
+                    dir=(dir+2)%4;
+                    break;
+                default:
+                    if(hall[tmp][0]==nx){
+                        nx = hall[tmp][2];
+                        ny = hall[tmp][3];
+                    }
+                    else{
+                        nx = hall[tmp][0];
+                        ny = hall[tmp][1];
+                    }
+                    break;
+            }
+        }
+
+    }
+
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        T = Integer.parseInt(br.readLine());
+
+        for(int tc=1;tc<=T;tc++){
+            N = Integer.parseInt(br.readLine().trim());
+            map = new int[N][N];
+            hall = new int[11][4];
+            ans = Integer.MIN_VALUE;
+
+            for(int i=0;i<11;i++){
+                for(int j=0;j<4;j++){
+                    hall[i][j]=-1;
+                }
+            }
+
+            for(int i=0;i<N;i++){
+                st = new StringTokenizer(br.readLine());
+                for(int j=0;j<N;j++){
+                    int tmp = Integer.parseInt(st.nextToken());
+                    map[i][j] = tmp;
+                    if(tmp>5){
+                        if(hall[tmp][0]==-1){
+                            hall[tmp][0]=i;
+                            hall[tmp][1]=j;
+                        }
+                        else{
+                            hall[tmp][2]=i;
+                            hall[tmp][3]=j;
+                        }
+                    }
+                }
+            }
+
+            for(int i=0;i<N;i++){
+                for(int j=0;j<N;j++){
+                    if(map[i][j]==0){
+                        //공을 놓을 수 있는 곳이면 공을 놓아본다
+                        //네방향으로
+                        for(int d=0;d<4;d++){
+                            Ball ball = new Ball(i,j,d);
+                            int res = go(ball);
+                            ans = Math.max(res,ans);
+                        }
+                    }
+                }
+            }
+            System.out.println("#"+tc+" "+ans);
+
+
+        }
+
+    }
+}
