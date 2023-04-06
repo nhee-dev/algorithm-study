@@ -2,7 +2,7 @@
 
 > **알고리즘 문제, 목표한 문제 수만큼 문제 풀이 및 업로드**
 
-- 기간 : 2022.09.04 ~ 2023.03.14 (192일)
+- 기간 : 2022.09.04 ~ 2023.04.04 (213일)
 
 ## ✅ Commit Message 규칙
 
@@ -67,29 +67,29 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     </td>    
   </tr>
   <tr>
-    <td align="center"><b>DFS/BFS</b></td> <!-- 6/125 -->
+    <td align="center"><b>DFS/BFS</b></td> <!-- 6/127 -->
     <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪</td>
     <td align="center">🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪</td>
     <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪</td>        
-    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪</td>
+    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪</td>
     <td align="center">🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪</td>
     <td align="center">🟢🟢<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪</td>
   </tr>
   <tr>
-    <td align="center"><b>구현</b></td> <!-- 6/57 -->
+    <td align="center"><b>구현</b></td> <!-- 6/61 -->
     <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪<br/>🟤🟤🟤🟤🟤</td>
-    <td align="center">🟡<br/>⚪⚪</td>
+    <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪</td>
     <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪<br/>🟤🟤</td>
     <td align="center">🟡🟡<br/>⚪⚪<br/>🟤🟤🟤</td>
     <td align="center">🟤</td>    
     <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
   </tr>
   <tr>
-    <td align="center"><b>Math</b></td> <!-- 6/14 -->
+    <td align="center"><b>Math</b></td> <!-- 6/15 -->
     <td align="center">🟤🟤🟤</td>
     <td align="center">⚪</td>
     <td align="center">⚪</td>        
-    <td align="center">⚪⚪⚪</br>🟤</td>
+    <td align="center">⚪⚪⚪</br>🟤🟤</td>
     <td align="center">🟤</td>        
     <td align="center">⚪⚪<br/>🟤🟤</td>
   </tr>     
@@ -112,17 +112,17 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟤</td>
   </tr>  
   <tr>
-    <td align="center"><b>완전탐색</b></td> <!-- 5/18 -->
-    <td align="center">⚪⚪⚪<br/>🟤</td>
+    <td align="center"><b>완전탐색</b></td> <!-- 5/23 -->
+    <td align="center">⚪⚪⚪⚪<br/>🟤🟤</td>
     <td align="center">⚪⚪<br/>🟤🟤🟤</td>
     <td align="center">⚪</td>        
-    <td align="center">🟡<br/>⚪</td>
+    <td align="center">🟡🟡🟡<br/>⚪⚪</td>
     <td align="center">-</td>                 
     <td align="center">⚪⚪⚪<br/>🟤🟤🟤</td>
   </tr>  
   <tr>
-    <td align="center"><b>Greedy</b></td> <!-- 4/18 -->
-    <td align="center">⚪⚪</td>
+    <td align="center"><b>Greedy</b></td> <!-- 4/19 -->
+    <td align="center">⚪⚪<br/>🟤</td>
     <td align="center">⚪⚪⚪</td>
     <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>🟤</td>        
     <td align="center">-</td>
@@ -202,10 +202,10 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪</td>  
   </tr>  
   <tr>
-    <td align="center"><b>시뮬레이션</b></td> <!-- 2/10 -->
+    <td align="center"><b>시뮬레이션</b></td> <!-- 2/13 -->
     <td align="center">-</td>
     <td align="center">-</td>
-    <td align="center">🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪<br/>🟤</td>        
+    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪<br/>🟤</td>        
     <td align="center">⚪</td>
     <td align="center">-</td>     
     <td align="center">-</td>   
@@ -310,6 +310,15 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>   
   <tr>
+    <td align="center"><b>자료구조</b></td> <!-- 1/1 -->
+    <td align="center">⚪</td>
+    <td align="center">-</td>
+    <td align="center">-</td>        
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">-</td>    
+  </tr>            
+  <tr>
     <td align="center"><b>KMP</b></td> <!-- 1/1 -->
     <td align="center">-</td>
     <td align="center">-</td>
@@ -317,5 +326,5 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">-</td>
     <td align="center">-</td>    
-  </tr>       
+  </tr>         
 </table>
