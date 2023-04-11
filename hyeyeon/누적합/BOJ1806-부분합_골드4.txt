@@ -1,0 +1,50 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+
+    static int N,S;
+    static int ans;
+
+    static void start(int[] x){
+        int start = 0;
+        int end = 0;
+        int sum = x[start];
+
+        while(true){
+            if(sum>=S){
+                ans = Math.min(end-start+1,ans);
+                sum -= x[start++];
+            }
+            else if(end==N-1) break;
+            else sum += x[++end];
+        }
+    }
+
+    public static void main(String args[]) throws Exception
+    {
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       StringTokenizer st;
+
+       int[] arr;
+       ans = Integer.MAX_VALUE;
+
+       st = new StringTokenizer(br.readLine());
+       N = Integer.parseInt(st.nextToken());
+       S = Integer.parseInt(st.nextToken());
+       arr = new int[N];
+
+       st = new StringTokenizer(br.readLine());
+       for(int i=0;i<N;i++){
+           arr[i] = Integer.parseInt(st.nextToken());
+       }
+
+       start(arr);
+       if(ans==Integer.MAX_VALUE) ans = 0;
+
+        System.out.println(ans);
+
+
+    }
+}
