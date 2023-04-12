@@ -166,6 +166,15 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>  
   <tr>
+    <td align="center"><b>Two Pointer</b></td> <!-- 3/7 -->
+    <td align="center">-</td>
+    <td align="center">-</td>
+    <td align="center">🟡🟡🟡🟡<br/>⚪</td>        
+    <td align="center">🟡</td>
+    <td align="center">-</td>    
+    <td align="center">🟡</td>    
+  </tr>        
+  <tr>
     <td align="center"><b>DP</b></td> <!-- 3/7 -->
     <td align="center">🟤</td>
     <td align="center">-</td>
@@ -182,16 +191,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">🟡</td>    
     <td align="center">🟡🟡<br/>⚪</td>    
-  </tr>  
-  <tr>
-    <td align="center"><b>Two Pointer</b></td> <!-- 3/4 -->
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">🟡🟡</td>        
-    <td align="center">🟡</td>
-    <td align="center">-</td>    
-    <td align="center">🟡</td>    
-  </tr>    
+  </tr>      
   <tr>
     <td align="center"><b>Heap &<br/>Priority Q</b></td> <!-- 3/4 -->
     <td align="center">-</td>
@@ -264,15 +264,6 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>
     <td align="center">-</td>    
   </tr>   
-  <tr>
-    <td align="center"><b>Two-Pointer</b></td> <!-- 1/3 -->
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">🟡🟡<br/>⚪</td>        
-    <td align="center">-</td>
-    <td align="center">-</td>
-    <td align="center">-</td>    
-  </tr>  
   <tr>
     <td align="center"><b>위상정렬</b></td> <!-- 1/2 -->
     <td align="center">-</td>
