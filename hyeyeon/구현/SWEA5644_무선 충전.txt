@@ -1,0 +1,109 @@
+import java.util.*;
+import java.io.*;
+
+public class Solution
+{
+    static class Point{
+        int x;
+        int y;
+
+        Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    static int[][] map;
+    static int[] dx = {0,0,1,0,-1};
+    static int[] dy = {0,-1,0,1,0};
+    static int T, M, A;
+    static int[] personA;
+    static int[] personB;
+    static int[][] charger; //충전기번호, 충전범위, 충전량
+    static Point a, b;
+
+    static int charging(Point p, int n){
+        int cx = charger[n][0];
+        int cy = charger[n][1];
+
+        int d = Math.abs(p.x-cx)+Math.abs(p.y-cy);
+        if(d<=charger[n][2]) return charger[n][3];
+        return 0;
+    }
+    static int go(){
+        int ans;
+        int max = 0;
+        //a,b가 충전기 하나씩 택함
+        //해당 위치에서 충전기까지의 거리를 구해서 충전가능한지 확인
+        //각각 다른거 골랐으면 그냥 더하면 되고
+        //같은거 골랐으면 max값 (0또는 충전량일테니)
+        for(int i=1;i<=A;i++){ //a가 고르고
+            for(int j=1;j<=A;j++){ //b가 고르고
+                int chargeA = charging(a,i);
+                int chargeB = charging(b,j);
+                //충전이 가능하면 충전량을, 불가능하면 0 return
+                if(i==j){
+                    //같은거 골랐으면
+                    ans = Math.max(chargeA,chargeB);
+                }
+                else{
+                    ans = chargeA+chargeB;
+                }
+                max = Math.max(ans,max);
+            }
+        }
+        return max;
+    }
+
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        T = Integer.parseInt(br.readLine());
+
+        for(int tc=1;tc<=T;tc++){
+            int answer = 0;
+            st = new StringTokenizer(br.readLine());
+            M = Integer.parseInt(st.nextToken());
+            A = Integer.parseInt(st.nextToken());
+            map = new int[11][11];
+            personA = new int[M];
+            personB = new int[M];
+            st = new StringTokenizer(br.readLine());
+            for(int i=0;i<M;i++){
+                personA[i] = Integer.parseInt(st.nextToken());
+            }
+            st = new StringTokenizer(br.readLine());
+            for(int i=0;i<M;i++){
+                personB[i] = Integer.parseInt(st.nextToken());
+            }
+            charger = new int[A+1][4];
+            for(int i=1;i<=A;i++){
+                st = new StringTokenizer(br.readLine());
+                int x = Integer.parseInt(st.nextToken());
+                int y = Integer.parseInt(st.nextToken());
+                map[x][y] = i;
+                charger[i][0] = x;
+                charger[i][1] = y;
+                charger[i][2] = Integer.parseInt(st.nextToken()); //중전범위
+                charger[i][3] = Integer.parseInt(st.nextToken()); //충전량
+            }
+            a = new Point(1,1);
+            b = new Point(10,10);
+            answer = go();
+
+            for(int i=0;i<M;i++){
+                a.x += dx[personA[i]];
+                a.y += dy[personA[i]];
+                b.x += dx[personB[i]];
+                b.y += dy[personB[i]];
+                answer += go();
+            }
+            System.out.println("#"+tc+" "+answer);
+
+        }
+
+
+    }
+}

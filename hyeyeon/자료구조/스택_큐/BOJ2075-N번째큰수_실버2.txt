@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+
+        //queue size는 5까지만 커질 수 있다
+        int n = Integer.parseInt(br.readLine());
+
+        for(int i=0;i<n;i++){
+            st = new StringTokenizer(br.readLine());
+            for(int j=0;j<n;j++){
+                int tmp = Integer.parseInt(st.nextToken());
+                if(queue.size()<n)
+                    queue.add(tmp);
+                else{
+                    if(queue.peek()>tmp) continue;
+                    else{
+                        queue.poll();
+                        queue.add(tmp);
+                    }
+                }
+            }
+        }
+        int ans = queue.poll();
+        System.out.println(ans);
+
+    }
+}
