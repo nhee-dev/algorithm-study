@@ -1,0 +1,68 @@
+import java.util.*;
+
+class Solution {
+    int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    
+    public int solution(int[][] maps) {
+                
+        return bfs(maps);
+    }
+    
+    int bfs(int[][] maps) {
+        Queue<Integer> Q = new LinkedList<>();
+        
+        Q.add(0);
+        Q.add(0);
+        maps[0][0] = 11;
+        
+        
+        // Q가 비어있지 않은 동안 진행
+        while(!Q.isEmpty()) {
+            int y = Q.poll(); int x = Q.poll();
+            
+            if(y == maps.length-1 && x == maps[0].length-1) {
+                return maps[y][x] - 10;            
+            }
+        
+            for(int i = 0; i < 4; i ++) {
+                int ny = y + dir[i][0];
+                int nx = x + dir[i][1];
+                
+                if(!validCheck(ny, nx, maps) || maps[ny][nx] != 1) continue;
+                
+                Q.add(ny); Q.add(nx);
+                maps[ny][nx] = maps[y][x] + 1;
+            }
+            
+        }
+        
+        return -1;
+    }
+    
+    boolean validCheck(int y, int x, int[][] maps) {
+        return y >= 0 && x >= 0 && y < maps.length && x < maps[0].length; 
+    }
+}
+
+/*
+ - 1 1 본인 (시작)
+ - n m 상대
+ - 이동은 상하좌우
+ - 상대팀 진영에 도달 불가할 수 있음
+ 
+ - 상대 진영에 도착하기 위한 칸의 최솟값은?
+ - 도달 불가 시 -1
+ 
+ - 0 벽, 1 길
+ 
+1. 정답의 최대치
+    100*100
+2. 간단한 접근
+    BFS로 맵을 탐색한다.
+        Q에 1,1을 넣는다.
+        상하좌우 중 방문 X, 1(길)이면 이동한다. 
+        맵의 해당 위치에 dist(10) + 1 을 기록한다. // 시작 위치는 10
+        도달 하면 map n m 을, 도달 못하면 -1일 리턴한다.
+3. 시간 복잡도
+    맵 크기 100*100 유사
+*/
