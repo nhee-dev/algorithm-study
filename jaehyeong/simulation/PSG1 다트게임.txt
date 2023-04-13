@@ -1,0 +1,76 @@
+import java.util.*;
+
+class Solution {
+    
+    int now, sqr, minus, bonus, pre, flag;
+    int answer = 0;
+    
+    public int solution(String dartResult) {
+        
+        initVar(); 
+        pre = 0;
+        char c;
+        for(int i = 0; i < dartResult.length(); i ++) {
+            c = dartResult.charAt(i);
+            
+            System.out.println("c : answer " + c + " " + answer);
+            if(c == 'S') {
+                sqr = 1;
+                flag = 0;
+            }
+            else if(c == 'D') {
+                sqr = 2;
+                flag = 0;
+            }
+            else if(c == 'T') {
+                sqr = 3;
+                flag = 0;
+            }
+            else if(c == '*') {
+                bonus = 2;
+                answer += pre;
+            }
+            else if(c == '#') {
+                minus = -1;
+            } 
+            else {
+                if(now == -1) {
+                    now = c - '0';
+                    flag = 1;
+                } 
+                else if (flag == 1) {
+                    now = 10;
+                }
+                else {
+                                    System.out.println("계산" + now + " " + sqr);
+                    handlePoint();
+                    initVar();
+                    now = c - '0';
+                    flag = 1;
+                }
+            }
+            
+            if (i == dartResult.length() -1) {
+                                    System.out.println("계산" + now + " " + sqr);
+                handlePoint();
+            }
+            
+        }
+    
+        return answer;   
+    }
+    
+    void initVar() {
+        now = -1; sqr = 1; minus = 1;  bonus = 1; flag = 0;
+    }
+
+    void handlePoint() {
+         int result = calcul();
+         answer += result;
+         pre = result;
+    }
+    
+    int calcul() {
+        return (int) Math.pow(now, sqr) * minus * bonus;
+    }
+}
