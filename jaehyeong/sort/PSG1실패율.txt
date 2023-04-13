@@ -1,0 +1,46 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int N, int[] stages) {
+        int[] answer = new int[N];
+
+        // 각 스테이지 별 도달자 수를 카운트한다.
+        // 0과 N+1은 제외 할 것이다.
+        int[] block_count = new int[N+2];
+        int[] total_count = new int[N+2];
+        for(int i : stages) {
+            block_count[i] ++;
+            for(int j = 1; j <= i; j ++) total_count[j]++;
+        }
+    
+				Stage[] calcul = new Stage[N];
+        for(int i = 1; i <= N; i++) {
+            calcul[i-1] = new Stage(i, 
+							(float) block_count[i] / ((total_count[i] == 0) ? 1 : total_count[i]));
+        }
+        
+        Arrays.sort(calcul);
+        for(int i = 0 ; i < N; i ++) {
+            answer[i] = calcul[i].stage_num;
+        }
+        
+        
+        return answer;
+    }
+}
+
+class Stage implements Comparable<Stage> {
+    int stage_num;
+    float fail_rate;
+    
+    Stage(int stage_num, float fail_rate) {
+        this.stage_num = stage_num;
+        this.fail_rate = fail_rate;
+    }
+    
+    public int compareTo(Stage n) {
+        if(this.fail_rate != n.fail_rate) return Float.compare(n.fail_rate, this.fail_rate);
+        else return this.stage_num - n.stage_num;
+    }
+    
+}
