@@ -1,0 +1,56 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    static String input;
+    static char[] arr;
+    static char[] tmp;
+    static boolean[] visited;
+    static PriorityQueue<Integer> pq;
+
+    static void start(int k){
+            if(k==input.length()) {
+                if (Integer.parseInt(String.valueOf(tmp)) > Integer.parseInt(input)) {
+                    //새로 만든게 더 크면
+                    pq.add(Integer.parseInt(String.valueOf(tmp)));
+                }
+            }
+            else{
+                for(int i=0;i<arr.length;i++){
+                    if(!visited[i]){
+                        visited[i]=true;
+                        tmp[k] = arr[i];
+                        start(k+1);
+                        visited[i]=false;
+                    }
+                }
+            }
+    }
+
+    public static void main(String args[]) throws Exception
+    {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        input = br.readLine();
+
+        arr = new char[input.length()];
+        visited = new boolean[input.length()];
+
+        for(int i=0;i<arr.length;i++){
+            arr[i] = input.charAt(i);
+        }
+
+        tmp = new char[input.length()];
+        pq = new PriorityQueue<>();
+
+        start(0);
+
+        int ans = 0;
+        if(pq.isEmpty()) ans = 0;
+        else ans = pq.poll();
+        System.out.println(ans);
+
+    }
+}
