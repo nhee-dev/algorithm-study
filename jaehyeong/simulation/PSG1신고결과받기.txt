@@ -1,0 +1,61 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer;
+        
+        //누가 누구를 신고했는가? A ABCD
+        HashMap<String, HashSet<String>> hw = new HashMap<>();
+        //누가 얼마나 신고당했는가? A 3
+        HashMap<String, Integer> rpCnt = new HashMap<>();
+        
+        //report를 돌며, Hash에 값을 입력한다.
+        for(String re : report) {
+            //s0 : 신고자, s1 : 피신고자
+            String[] s = re.split(" ");
+            String reporter = s[0];
+            String reported = s[1];
+            
+            //누가 몇번 신고 당함?
+            //신고 처음 당하면 생성
+            if(!rpCnt.containsKey(reported)) rpCnt.put(reported, 0);
+            if(hw.containsKey(reporter) && hw.get(reporter).contains(reported)) continue;
+            rpCnt.replace(reported, rpCnt.get(reported) + 1);
+            
+            //누가 누구 신고
+            //신고 처음하면 생성
+            if(!hw.containsKey(reporter)) hw.put(reporter, new HashSet<String>());
+            hw.get(reporter).add(reported); // 신고자에 신고한 사람 넣기
+            
+        }
+        
+        Iterator rpIt = rpCnt.entrySet().iterator();
+        while(rpIt.hasNext()) {
+            Map.Entry<String, Integer> entry = (Map.Entry) rpIt.next();
+            
+            // 정지 안된 사람 제거
+            if(entry.getValue() < k) rpIt.remove();
+            
+        }
+
+            
+        answer = new int[id_list.length];
+            
+        // 신고자 리스트를 돌며, 정지된 사람 수를 센다.
+        Iterator it;
+        for(int i = 0; i < id_list.length; i++) {
+            // 해당 아이디가 신고자 목록에 있으면
+            if(hw.containsKey(id_list[i])) {
+                // 신고한 사람들 중 정지 당한 사람이 있는지 찾음
+                it = hw.get(id_list[i]).iterator();
+                while(it.hasNext()) {
+                    String reported_name = (String) it.next();
+                    if(rpCnt.containsKey(reported_name)) answer[i]++;
+                }
+            }
+        }
+        
+        return answer;
+    }
+}
+    
