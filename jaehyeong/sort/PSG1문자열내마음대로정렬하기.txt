@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Solution {
+    public String[] solution(String[] strings, int n) {
+        String[] answer = new String[strings.length];
+        Elem[] elems = new Elem[strings.length];
+        
+        for(int i = 0; i < strings.length; i++) {
+            elems[i] = new Elem(strings[i], strings[i].charAt(n));
+        }
+        
+        Arrays.sort(elems);
+        
+        for(int i = 0 ; i < elems.length; i++) {
+            answer[i] = elems[i].s;
+        }
+        return answer;
+    }
+}
+
+class Elem implements Comparable<Elem> {
+    String s;
+    char c;
+    Elem(String _s, char _c) {
+        s = _s; c = _c;
+    }
+    
+    public int compareTo(Elem o) {
+        if(c != o.c) return Character.compare(c, o.c);
+        return s.compareTo(o.s);
+    }
+}
