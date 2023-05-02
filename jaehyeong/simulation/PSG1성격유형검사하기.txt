@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String[] survey, int[] choices) {
+        
+        HashMap<Character, Integer> map = new HashMap();
+        map.put('R', 0);   map.put('T', 0);   map.put('C', 0);   map.put('F', 0);
+        map.put('J', 0);   map.put('M', 0);   map.put('A', 0);   map.put('N', 0);
+        
+        for(int i = 0; i < choices.length; i ++) {
+            char naga = survey[i].charAt(0);
+            char posi = survey[i].charAt(1);
+            int choice = choices[i];
+            
+            if(choices[i] < 4) {
+                map.put(naga, map.get(naga) + (4 - choice));
+            } else if(choices[i] > 4) {
+                map.put(posi, map.get(posi) + (choice - 4));
+            }
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append((map.get('R') >= map.get('T')) ? 'R' : 'T');
+        sb.append((map.get('C') >= map.get('F')) ? 'C' : 'F');
+        sb.append((map.get('J') >= map.get('M')) ? 'J' : 'M');
+        sb.append((map.get('A') >= map.get('N')) ? 'A' : 'N');
+        
+        return sb.toString();
+    }
+}
+
+/*
+String[] 수 만큼 진행한다.
+    비동의 : s.char 0
+    동의 : s.char 1
+    
+    choices[i]가 1, 2, 3 이면 Map 비동의 + 3 2 1
+                 7, 6, 5 이면 Map 동의 + 3 2 1
+                 
+RT CF JM AN 비교 해 더 큰 점수를 apend
+같은 점수면 앞에 것 출력
+    
+*/
