@@ -1,0 +1,63 @@
+class Solution {
+    public int[] solution(String today, String[] terms, String[] privacies) {
+
+        ArrayList<Integer> answerArr = new ArrayList<>();
+
+        // 약관 저장 "A" 5
+        HashMap<String, Integer> termMap = new HashMap();
+        for(int i = 0; i < terms.length; i++) {
+            String[] s = terms[i].split(" ");
+            termMap.put(s[0], Integer.parseInt(s[1]));
+        }
+
+        for(int i = 0; i < privacies.length; i ++) {
+            // 년 월 일 구하기
+            String[] s = privacies[i].split(" ");
+            String[] ymd = s[0].split("\\.");
+
+            // 년 월 일 약정기간 
+            int year = Integer.parseInt(ymd[0]);
+            int month = Integer.parseInt(ymd[1]);
+            int day = Integer.parseInt(ymd[2]);
+            int pass = termMap.get(s[1]);
+
+            // 약정일 구하기
+            // 일자 -1
+            if(day-1 == 0) {
+                day = 28;
+                month = month - 1;
+            } else {
+                day -= 1;
+            }
+
+            if(month == 0) {
+                month = 12;
+                year = year - 1;
+            }
+
+            // 월, 년 계산
+            int calculMonth = month + pass;
+            year += calculMonth / 12;
+            month = calculMonth % 12;
+
+            if(month == 0) {
+                month = 12;
+                year = year - 1;
+            }
+
+            // 오늘 날짜 이전인지 구하기 
+            String newYMD = year + "." + ((month >= 10) ? month : ("0" + month)) + "." + 
+                ((day >= 10) ? day : ("0" + day));
+
+            if(today.compareTo(newYMD) > 0) answerArr.add(i+1);
+
+        }
+
+        int[] answer = new int[answerArr.size()];
+        for(int i = 0 ; i < answer.length; i ++) {
+            answer[i] = answerArr.get(i);
+        }
+
+        return answer;
+    }
+}

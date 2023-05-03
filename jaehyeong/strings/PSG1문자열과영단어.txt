@@ -1,0 +1,54 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        
+        Stack<Integer> stack = new Stack();
+        for(int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                stack.push(s.charAt(i) - '0');
+            } else {
+                String cs = s.charAt(i) + "" +  s.charAt(i+1);
+                switch(cs) {
+                    case "ze" : i +=3; stack.push(0);
+                        break;
+                    case "on" : i +=2; stack.push(1);
+                        break;
+                    case "tw" : i +=2; stack.push(2);
+                        break;
+                    case "th" : i +=4; stack.push(3);
+                        break;
+                    case "fo" : i +=3; stack.push(4);
+                        break;
+                    case "fi" : i +=3; stack.push(5);
+                        break;
+                    case "si" : i +=2; stack.push(6);
+                        break;
+                    case "se" : i +=4; stack.push(7);
+                        break;
+                    case "ei" : i +=4; stack.push(8);
+                        break;
+                    case "ni" : i +=3; stack.push(9);
+                        break;
+                }
+                
+            }
+        }
+        
+        int times = 0;
+        while(!stack.isEmpty()) {
+            answer += stack.pop() * Math.pow(10, times++);
+        }
+        
+        return answer;
+    }
+}
+
+/*
+앞에서 부터 숫자이면 넘어간다. 
+숫자가 아니면 현재, 다음 숫자를 확인한다.
+    switch로 ze, ni 까지 분기를 나눈다.
+    각 숫자 만큼 숫자로 replace 한다.
+숫자로 바꾼다.
+*/
