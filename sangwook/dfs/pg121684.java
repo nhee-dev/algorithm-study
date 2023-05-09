@@ -9,7 +9,6 @@ public class pg121684 {
         int sportsNum = ability[0].length;
         boolean[] visit = new boolean[studentNum];
         dfs(0,0,ability,visit);
-
         return max;
     }
 
