@@ -1,0 +1,57 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int n, String[] words) {
+        
+        int[] answer = new int[2];
+        answer[0] = 0; answer[1] = 0;
+        
+        int cnt = 1; // 몇번째 차례
+        int pCnt = 0; // 누구 차례
+        char lastC = words[0].charAt(0); // 처음 단어 true
+        
+        HashSet<String> hs = new HashSet();
+        
+        boolean isBreak = false;
+        for(int i = 0; i < words.length; i ++) {
+            if(pCnt < n) {
+                pCnt++ ;
+            } else {
+                pCnt = 1; cnt++; 
+            }
+            
+            if(words[i].charAt(0) != lastC) {
+                    answer[0] = pCnt; answer[1] = cnt;
+                    break;
+            }
+            lastC = words[i].charAt(words[i].length()-1);
+            
+            if(hs.contains(words[i])){
+                    answer[0] = pCnt; answer[1] = cnt;
+                    break;
+            }
+            else hs.add(words[i]);
+            
+        }
+        
+
+        return answer;
+    }
+}
+/*
+순서대로 단어를 말한다. 
+    1. 앞사람 마지막 문자
+    2. 한글자는 안됨 - 이미 조건 충족(단어는 2이상)
+    3. 중복 안됨
+가장 먼저 틀린 사람의 번호와, 몇번째 차례인지를 구한다.
+탈락자가 없으면 0, 0을 리턴한다.
+
+1. 앞사람 마지막 글자로 시작 판단
+    단어 종료 시 마지막 글자를 입력해두고, 
+    시작 시 첫 글자가 같은지 판단한다.
+2. 중복 안됨 판단
+    각 단어를 HashSet에 넣고, 이미 있으면 탈락 시킨다.
+3. 몇번째 차례인가?
+    인원수 만큼 반복하고, 시작시 +1 해서 반복 횟수를 구한다.
+
+*/
