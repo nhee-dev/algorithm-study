@@ -26,7 +26,6 @@ public class pg121683 {
             if( i == input_string.length()-1 ){
                 continueCnt[ch-'a']++;
             }
-
         }
 
         StringBuilder sb = new StringBuilder();
