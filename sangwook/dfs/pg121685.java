@@ -35,7 +35,6 @@ public class pg121685 {
     }
 
     private String findParent(int n, int p, int q){
-
         if(n == 1){
             if(q == 1){
                 return "RR";
