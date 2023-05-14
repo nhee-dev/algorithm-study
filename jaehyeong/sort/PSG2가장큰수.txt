@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public String solution(int[] numbers) {
+        
+        String[] numS = new String[numbers.length];
+        for(int i= 0; i < numbers.length; i ++) {
+            numS[i] = numbers[i] + "";
+        }
+        
+        Arrays.sort(numS, new Comparator<String>() {
+            public int compare(String a, String b) {
+                return (b + a).compareTo(a + b);
+            }
+        });
+        
+        StringBuilder sb = new StringBuilder();
+        for(String s : numS) {
+            sb.append(s);
+        }
+        
+        String answer = sb.toString();
+        if(answer.charAt(0) == '0') answer = "0";
+        
+        return answer;
+    }
+}
