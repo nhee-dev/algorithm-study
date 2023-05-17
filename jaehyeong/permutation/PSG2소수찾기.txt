@@ -1,0 +1,61 @@
+import java.util.*;
+
+class Solution {
+    int answer = 0;
+    boolean[] visited;
+    int[] nums, picked;
+    public int solution(String numbers) {
+        nums = new int[numbers.length()];
+        for(int i = 0; i < numbers.length(); i++) {
+            nums[i] = numbers.charAt(i) - '0';
+        }
+        picked = new int[numbers.length()];
+        visited = new boolean[numbers.length()];
+        
+        Arrays.sort(nums);
+        permutation(0);
+        
+        return answer;
+    }
+    
+    void permutation(int depth) {
+        if(depth != 0) checkNum(depth);
+        if(depth == nums.length) return;
+
+        
+        int last = -1;
+        for(int i = 0; i < nums.length; i++) {
+            if(visited[i]) continue;
+            if(depth == 0 && nums[i] == 0) continue;
+            if(last == nums[i]) continue;
+            picked[depth] = nums[i];
+            visited[i] = true;
+            permutation(depth+1);
+            visited[i] = false;
+            last = nums[i];
+        }
+    }
+    
+    void checkNum(int depth) {
+        int num = 0;
+        for(int i = depth-1; i >= 0; i--) {
+            num += picked[i] * Math.pow(10, depth-1-i);
+        }
+        
+        if(num == 0 || num == 1) return;
+        
+        for(int i = 2; i < num; i++) {
+            if(num%i == 0) return;
+        }
+        
+        answer++;
+    }
+}
+
+/*
+String에 숫자가 적혀있다.
+숫자를 하나 씩 뽑는다. 
+매번 뽑을 때 마다 소수인지 확인한다. (정렬 후 같은 수 이면 넘어 간다.) (첫 순서에는 0을 뽑지 않는다.)
+    2~자신-1 까지로 나눠 나머지가 없는 수가 있으면 소수가 아니다.
+
+*/

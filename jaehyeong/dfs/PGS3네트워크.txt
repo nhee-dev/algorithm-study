@@ -1,0 +1,46 @@
+class Solution {
+    boolean visited[];
+    int[][] comArr;
+    
+    public int solution(int n, int[][] computers) {
+        
+        visited = new boolean[n];
+        comArr = computers;
+        
+        int networks = 0;    
+
+        for(int i = 0; i < n; i ++) {
+            if(visited[i]) continue;
+            networks++;
+            dfs(i);
+        }
+            
+        return networks;
+    }
+    
+    void dfs(int X) {
+        visited[X] = true;
+        
+        for(int i = 0; i < comArr[X].length; i++) {
+            if(comArr[X][i] == 1 && !visited[i]) {
+                dfs(i);
+            }
+        }
+    }
+}
+
+/*
+1. 정답의 최대치 : 200
+2. 간단한 접근
+    1~200의 visit을 만든다.
+    1부터 탐색해 방문하지 않은 위치를 dfs로 탐색한다. (네트워크 수 ++)
+        dfs(X)
+            visited[X] = true;
+            for(i : computers[X])
+                if(visiteedpi) == false
+                    difs(X)
+            
+
+
+
+*/

@@ -1,0 +1,54 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int k, int[] tangerine) {
+        HashMap<Integer, Integer> map = new HashMap();
+
+        Arrays.sort(tangerine);
+        int sameCnt = 0;
+        int lastNum = 0;
+        for(int i = tangerine.length-1; i >= 0; i--) {
+            int now = tangerine[i];
+            // 새로운 수가 나옴
+            if(lastNum != now) {
+                map.put(lastNum, sameCnt);
+                sameCnt = 0;
+                lastNum = now;
+            }
+            sameCnt++;
+            
+            if(i == 0) {
+                map.put(now, sameCnt);
+            }
+        }
+        
+        List<Integer> list = new ArrayList<>(map.values());
+        Collections.sort(list);
+        
+        int cnt = 0;
+        for(int i = list.size()-1; i >= 0; i--) {
+            if(k <= 0) break;
+            cnt++;
+            k -= list.get(list.size()-cnt);
+        }
+        
+        return cnt;
+    }
+}
+
+/*
+1. 정답의 최대치
+    모두 다를 때 10만
+2. 간단한 접근
+    카운팅을 한다. 정렬 한다.
+    목표 수 - 가장 많은 갯수 - 가장 많은 수 .. 0 까지 반복한다.
+        반복 시 마다 cnt++ 한다.
+    공간은 1천만 ... 줄일 수 있나?
+        정렬 후 마지막 부터 세고 ... 다른게 나오면 HashMap에 넣어준다.
+        HashMap 정렬 후 진행한다.
+3. 시간 복잡도
+    카운팅에 10만
+    정렬에 10만 log10만
+    계산 ...
+
+*/
