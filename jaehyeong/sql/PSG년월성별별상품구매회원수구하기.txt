@@ -1,0 +1,7 @@
+SELECT Year(S.sales_date) Year, Month(S.sales_date) Month, U.gender Gender, count(distinct U.user_id) as Users
+from user_info as U, online_sale as S
+where U.user_id = S.user_id and U.gender is not null
+group by Year(S.sales_date), Month(S.sales_date), U.gender
+order by Year asc, Month asc , Gender asc
+
+lv4
