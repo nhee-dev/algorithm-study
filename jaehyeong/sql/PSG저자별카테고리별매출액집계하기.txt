@@ -1,0 +1,9 @@
+select B.Author_ID, A.Author_name, B.Category, sum(sales * price) as total_sales
+from book as B, author as A, book_sales as S
+where B.Author_ID = A.Author_ID and B.Book_ID = S.BOOK_ID
+    and Date_Format(S.Sales_date, '%Y-%m') = '2022-01'
+group by B.author_ID, B.category
+order by B.author_id asc, B.category desc
+
+
+lv4
