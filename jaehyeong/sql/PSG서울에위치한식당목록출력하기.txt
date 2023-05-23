@@ -1,0 +1,8 @@
+SELECT I.rest_id, I.rest_name, I.food_type, I.favorites, I.address, 
+        round(avg(R.review_score), 2) as score
+FROM REST_INFO as I, REST_REVIEW as R
+where I.rest_ID = R.rest_ID and I.address like '서울%'
+group by I.rest_id
+order by score desc, I.favorites desc
+
+lv4
