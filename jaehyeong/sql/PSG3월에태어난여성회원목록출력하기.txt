@@ -1,0 +1,7 @@
+SELECT  member_id, member_name, gender, Date_Format(date_of_birth, '%Y-%m-%d') as Date_Of_Birth
+from member_profile
+where gender = 'W' and Month(date_of_birth) = Month('2001-03-03') 
+    and tlno is not null
+order by member_id asc
+
+//2
