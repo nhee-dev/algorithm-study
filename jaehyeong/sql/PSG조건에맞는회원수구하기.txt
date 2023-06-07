@@ -1,0 +1,6 @@
+SELECT count(user_id) as USERS
+from user_info
+where Date_Format(joined, "%Y") = "2021"
+    and age >= 20 and age <= 29;
+
+//1
