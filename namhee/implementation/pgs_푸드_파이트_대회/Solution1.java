@@ -1,3 +1,13 @@
+/*  문제 설계
+    1. food[1]부터 짝수개 양만 더한다.
+    2. 1...2...2...1
+     (1) food에서 대결에 쓸 수 있는 음식의 수를 구하자. (worst : 9)
+     (2) 구한 음식 수로 char[] 배열 초기화
+     (3) 구한 음식 수 / 2 만큼 char[] 배열 값 할당 (9 * 1000 / 2)
+     (4) char[] to String
+        (String의 최대 길이는?)
+ */
+
 class Solution {
     public String solution(int[] food) {
         int num = 0;
