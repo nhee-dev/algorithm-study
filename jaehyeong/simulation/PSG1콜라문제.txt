@@ -1,0 +1,27 @@
+
+class Solution {
+
+    int answer;
+    int need;
+    int back;
+
+    public int solution(int a, int b, int n) {
+        answer = 0;
+        need = a; back = b;
+
+        getCoke(n);
+
+        return answer;
+    }
+
+    void getCoke(int cola) {
+        if(cola < need) return;
+
+        int newCoke = (cola / need) * back;
+        int leftCoke = cola % need;
+
+        answer += newCoke;
+
+        dfs(newCoke + leftCoke);
+    }
+}
