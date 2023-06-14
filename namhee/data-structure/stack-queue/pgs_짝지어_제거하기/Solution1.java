@@ -1,3 +1,4 @@
+// 효율성 테스트 평균 14ms, 57.7MB
 // Stack을 사용 (stack 구현을 배열로 해 봄.)
 class Solution {
     public int solution(String s) {
