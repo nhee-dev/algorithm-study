@@ -1,0 +1,53 @@
+class Solution {
+    int maxCnt;
+    boolean[] visited;
+    
+    public int solution(int k, int[][] dungeons) {
+        maxCnt = 0;
+        visited = new boolean[dungeons.length];
+        
+        rec_func(k, 0, dungeons);
+        
+        return maxCnt;
+    }
+    
+    void rec_func(int tiredP, int cnt, int[][] dungeons) {
+        System.out.println(tiredP + " 현재 피로도 : 방문수 " + cnt);
+        if(cnt > maxCnt) {
+            System.out.println("갱신 maxCnt");
+            maxCnt = cnt;
+        }
+        
+        for(int i = 0; i < dungeons.length; i++) {
+            if(visited[i]) continue;
+            if(dungeons[i][0] > tiredP || dungeons[i][1] > tiredP) continue;
+            visited[i] = true;
+            rec_func(tiredP-dungeons[i][1], cnt+1, dungeons);
+            visited[i] = false;
+        }
+        
+    }
+}
+
+/*
+조합을 이용한다. 중복은 불가능, 순서는 의미 있음.
+시간 복잡도는 최대 8! ... 충분하다.
+
+rec_func(현재 피로도, cnt)
+    if(cnt > maxCnt) {
+        갱신
+    }
+    
+    던전 배열을 확인한다.
+        visited가 true이면 넘어간다.
+        최소 필요도 > 현재 필요도 이면 넘어간다.
+        소모 필요도 > 현재 필요도 이면 넘어간다.
+        
+        방문X, 최소필요도가 더 작고, 소모 필요도가 더 작으면 방문하자.
+        rec(현재 필요도 - 소모 필요도, cnt++)
+        
+        visit 초기화한다.
+        
+
+
+*/
