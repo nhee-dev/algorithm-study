@@ -117,7 +117,7 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪⚪</td>
     <td align="center">🟡🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪<br/>🟤🟤</td>        
     <td align="center">-</td>
-    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪<br/>🟤🟤🟤🟤</td>     
+    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪<br/>🟤🟤🟤🟤</td>     
     <td align="center">⚪⚪</td>   
   </tr>  
   <tr>
