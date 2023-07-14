@@ -1,0 +1,213 @@
+public class 1260{
+	
+	static BufferedReader br;
+	static StringTokenizer st;
+	static StringBuilder sb = new StringBuilder();
+	
+	static ArrayList<Integer>[] arr;
+	static boolean[] visited;
+	static int nodeCnt, wayCnt, startNode; 
+	
+	static void input() throws IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		
+		st = new StringTokenizer(br.readLine());
+		nodeCnt = Integer.parseInt(st.nextToken());
+		wayCnt = Integer.parseInt(st.nextToken());
+		startNode = Integer.parseInt(st.nextToken());
+		
+		arr = new ArrayList[nodeCnt+1];
+		for(int i = 1; i <= nodeCnt; i ++) {
+			arr[i] = new ArrayList<Integer>();
+		}
+				
+		for(int i = 0; i < wayCnt; i ++) {
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			arr[a].add(b);
+			arr[b].add(a);
+		}
+		
+		visited = new boolean[nodeCnt+1];
+	}
+	
+	static void solve() {
+		dfs(startNode);
+		
+		sb.append("\n");
+		visited = new boolean[nodeCnt+1];
+		
+		bfs();
+		
+		System.out.println(sb);
+	}
+	
+	static void dfs(int node) {
+		sb.append(node + " ");
+		visited[node] = true;
+		
+		for(int next : arr[node]) {
+			if(visited[next]) continue;
+			dfs(next);
+		}
+	}
+	
+	static void bfs() {
+		Queue<Integer> Q = new LinkedList<Integer>();
+		
+		Q.add(startNode);
+		visited[startNode] = true;
+		
+		while(!Q.isEmpty()) {
+			int now = Q.poll();
+			sb.append(now).append(" ");
+			
+			for(int next : arr[now]) {
+				if(visited[next]) continue;
+				Q.add(next);
+				visited[next] = true;
+			}
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		input();
+		solve();
+	}
+
+}
+
+public class BOJ5567 {
+	
+	static BufferedReader br;
+	static StringTokenizer st;
+	
+	static int N, M, ans;
+	static ArrayList<Integer>[] ways;
+	static int[] dist;
+	
+	static void input() throws IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		
+		N = Integer.parseInt(br.readLine());
+		M = Integer.parseInt(br.readLine());
+		
+		ways = new ArrayList[N+1]; // 1부터
+		for(int i = 1; i <= N; i++) {
+			ways[i] = new ArrayList<>();
+		}
+		for(int i = 1; i<= M; i ++) {
+			st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			ways[a].add(b);
+			ways[b].add(a);
+		}
+		
+		dist = new int[N+1];
+	}
+	
+	static void solve() throws IOException {
+		
+		bfs();
+		
+		System.out.println(ans-1);
+	}
+	
+	static void bfs() {
+		Queue<Integer> Q = new LinkedList<>();
+		
+		Q.add(1);
+		dist[1] = 1;
+		
+		while(!Q.isEmpty()) {
+			int now = Q.poll();
+			
+			ans++; 
+
+			if(dist[now] == 3) continue;
+			
+			for(int i : ways[now]) {
+				
+				if(dist[i] != 0) continue;
+				
+				Q.add(i);
+				dist[i] = dist[now]+1;
+			}
+		}
+		
+	}
+
+	public static void main(String[] args) throws IOException {
+		input();
+		solve();
+	}
+
+}
+
+
+public class BOJ2178  { 
+
+	static BufferedReader br;
+	static StringTokenizer st;
+	
+	static int N, M;
+	static String[] map;
+	static int[][] dist;
+	static int[][] dir = {{-1, 0}, {1, 0},{0, -1}, {0, 1}};
+	
+	static void input() throws IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		
+		st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		
+		map = new String[N+1];
+		for(int i = 1; i <= N; i++) {
+			map[i] = br.readLine();
+		}
+		dist = new int[N+1][M+1];
+	}
+	
+	static void bfs() {
+		Queue<Integer> Q = new LinkedList<>();
+		
+		Q.add(1);
+		Q.add(1);
+		dist[1][1] = 1;
+		
+		while(!Q.isEmpty()) {
+			int y = Q.poll();
+			int x = Q.poll();
+			
+			for(int k = 0; k < 4; k++) {
+				int ny = y + dir[k][0];
+				int nx = x + dir[k][1];
+				
+				if(ny < 1 || nx < 1 || ny > N || nx > M) continue;
+				if(dist[ny][nx] != 0) continue;
+				if(map[ny].charAt(nx-1) == '0') continue;
+			
+				Q.add(ny);
+				Q.add(nx);
+				dist[ny][nx] = dist[y][x] + 1;
+			}
+		}
+	}
+	
+	static void solve() {
+		bfs();
+
+		System.out.println(dist[N][M]);
+	}
+	
+	public static void main(String[] args) throws IOException {
+		input();
+		solve();
+	}
+
+}
+
+
