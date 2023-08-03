@@ -1,0 +1,60 @@
+class Solution {
+    public String solution(int[] food) {
+        
+        //sb를 만든다.
+        StringBuilder sb = new StringBuilder();
+        
+        //food 배열의 idx 1 부터 탐색한다.
+        for(int i = 1; i < food.length; i++) {
+            //food[idx] / 2 만큼, idx를 sb에 더한다.
+            for(int f = 0; f < food[i]/2; f++) {
+                sb.append(i);
+            }
+        }
+
+        //탐색이 끝나면 sb에 0을 더한다.
+        sb.append('0');
+        
+        //현재 sb의 길이를 구하고, 길이-2(마지막, 0)부터 
+        int nowL = sb.length();
+        
+        //0까지 sb에 더한다.
+        for(int i = nowL-2; i >= 0; i--) {
+            sb.append(sb.charAt(i));
+        }
+        
+        return sb.toString();
+    }
+}
+
+/*
+1. 접근
+    총 음식 수를 구하고, 가운데를 0으로 한다.
+    음식 수는 idx 별 /2의 값이다.
+    
+    arrayList에 음식 index 1 부터 /2 만큼 넣는다.
+    끝나면 0을 넣고, ArrayList를 거꾸로 순회하며 넣는다.
+
+    시간 복잡도 : food의 원소가 모두 1000이라고 하면, 
+    N은 9천이 최대이다.
+    
+    하나씩 넣어줄 거라면 sb에 처음부터 넣어주는 것이 좋다.
+    (어차피 나중에 다시 넣어 줘야 한다.)
+
+    --
+    stack에 차례로 넣으며 Sb에 더하고, 다음에 stack에서 꺼내며 더한다.
+    --
+    sb만 사용해서 넣고 더하는 방법이 자료구조하나로 가능하다.
+2. 구현
+    sb를 만든다.
+    food 배열의 idx 1 부터 탐색한다.
+        food[idx] / 2 만큼, idx를 sb에 더한다.
+    탐색이 끝나면 sb에 0을 더한다.
+    현재 sb의 길이를 구하고, 길이-2(마지막, 0)부터 0까지 sb에 더한다.
+    
+    sb를 만든다. stack도 만든다.(스택 연습 겸)
+    food 배열의 idx 1 부터 탐색한다.
+        food[idx] / 2 만큼 idx를 sb에 더한다. stack 넣는다.
+    탐색이 끝나면 sb에 0을 더한다.
+    stack에서 하나씩 꺼내 sb에 더한다.
+*/

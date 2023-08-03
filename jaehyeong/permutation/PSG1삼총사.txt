@@ -1,0 +1,49 @@
+class Solution {
+    int answer;
+    int[] students;
+    public int solution(int[] number) {
+        
+        answer= 0;
+        // 배열 주소값 복사
+        students = number;
+        
+        permutation(0, 0, 0);
+        
+        return answer;
+    }
+    
+    void permutation(int depth, int idx, int sum) {
+        // 3개를 뽑으면 종료
+        if(depth == 3) {
+            if(sum == 0) answer ++;
+            return;
+        }
+        // 선택 범위 넘으면 종료
+        if(idx >= students.length) return;
+        
+        // 3개를 뽑는다.
+        // 중복X, 순서X
+        // idx는 항상 증가한다.
+        // 현재 student idx를 선택 : depth+1, sum 계산
+        permutation(depth+1, idx+1, sum + students[idx]);
+        // 현재 student를 선택 않는다.
+        permutation(depth, idx+1, sum);
+        
+        
+    }
+}
+
+/*
+1. 접근
+    학생들 배열을 조합한다.
+    3개를 더해서 0이 되면 answer++, 아니면 리턴한다.
+    
+    시간복잡도 : 13^3 보다 작다.
+
+2. 정답의 최대치
+    13^3 보다 작다.
+
+3. 구현
+    학생 배열을 조합한다.
+    3명을 골랐을 때 0이 되면 ++ 한다.
+*/
