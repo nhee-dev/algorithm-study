@@ -1,0 +1,62 @@
+import java.util.;
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        ArrayListInteger answerArr = new ArrayList();        
+        
+        days = 0;
+        idx = 0;
+        export = 0;.
+        idx 0이 완료되는데 걸리는 시간을 구한다. (7)
+        idx 0~ 탐색한다.
+        완성도 + 진행속도days = 100이면 export를 1 증가 시킨다. 
+        export ++ 한다.
+        100 미만인 것이 나오면 탐색을 종료한다.
+        ArrayList에 export 넣는다.
+        export를 0으로 초기화 한다.
+        idx를 i+1로 만든다.
+        
+        int days = 0;  작업도 100 미만, 무조건 1 이상
+        int nowIdx = 0;
+        int exportCnt = 0;
+        while(nowIdx  progresses.length) {
+            days++;
+             가장 앞의 작업이 완료 되었으면
+            if(isComplete(progresses[nowIdx], days, speeds[nowIdx])) {
+                   현재 작업부터, 완료된 연속 작업들을 확인한다.
+                  for(int i = nowIdx; i  progresses.length; i++) {
+                       완료 되었으면
+                      if(isComplete(progresses[i], days, speeds[i])) {
+                           이번 배포에 반영한다.
+                          exportCnt++;
+                           마지막 idx이면
+                          if(i == progresses.length-1) {
+                                answerArr.add(exportCnt);
+                                nowIdx = i+1;
+                                exportCnt = 0;
+                                break;
+                          }
+                      } else {  아직 완료되지 않았으면
+                           완료된 작업들을 배포한다.
+                          answerArr.add(exportCnt);
+                           현재 작업부터 확인하도록 한다.
+                          nowIdx = i;
+                          exportCnt = 0;
+                          break;
+                      }
+                  }
+            }
+        }
+        
+        int[] answer = new int[answerArr.size()];
+        for(int i = 0; i  answerArr.size(); i++) {
+            answer[i] = answerArr.get(i);
+        }
+        
+        return answer;
+    }
+    
+    boolean isComplete(int progress, int days, int speeds) {
+        return progress + days  speeds = 100;
+    }
+}
