@@ -1,0 +1,130 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String str1, String str2) {
+        int answer = 0;
+
+        answer = new Jacad(str1, str2)
+            .canculSimilar()
+            .getJacad();
+            
+        return answer;
+    }
+}
+
+class Jacad {
+    
+    HashMap<String, Integer> aMap;
+    HashMap<String, Integer> bMap;
+    
+    int sameCnt;
+    int totalCnt;
+    
+    Jacad(String strA, String strB) {
+        aMap = new HashMap<>();
+        bMap = new HashMap<>();
+        
+        sameCnt = 0; totalCnt = 0;
+        
+        makeMap(0, strA);
+        makeMap(1, strB);
+    }
+    
+    //String을 0 ~ end 까지 2글자씩 자른다.
+    //유효한 값인가? -> A, B Map에 넣는다.
+    private void makeMap(int mapNum, String s) {
+        HashMap<String, Integer> map = (mapNum == 0) ? aMap : bMap;
+        for(int i = 0; i < s.length()-1; i++) { 
+            String sub = s.substring(i, i+2).toLowerCase();
+            // System.out.println("sub" + " " + sub + " i+1 " + (i+1));
+            
+            if(isAble(sub)) {
+                map.put(sub, map.getOrDefault(sub, 0) + 1);
+            }
+        }
+        
+        System.out.println(mapNum + " " + map);
+    }
+    
+    private boolean isAble(String s) {
+        for(int i = 0; i < 2; i++) {
+            char c = s.charAt(i);
+            // 영문이 아니면 false 반환
+            if(!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))) return false;
+        }
+        return true;
+    }
+    
+    Jacad canculSimilar() {
+        //A map을 순회한다.
+        //각 요소와 B map의 요소를 비교한다.
+            //A에 있고, B에 있으면 교+min, 합+max
+            //A에 있고, B에 없으면 교+0, 합+A
+        for(String aKey : aMap.keySet()) {
+            if(bMap.containsKey(aKey)) {
+                sameCnt += Math.min(aMap.get(aKey), bMap.get(aKey));
+                totalCnt += Math.max(aMap.get(aKey), bMap.get(aKey));
+                bMap.remove(aKey);
+            } else {
+                totalCnt += aMap.get(aKey);               
+            }
+        }
+        
+        //B map에 남은 값들을 순회한다.
+        for(String bKey : bMap.keySet()) {
+            totalCnt += bMap.get(bKey);
+        }
+        
+        return this;
+    }
+    
+    int getJacad() {
+        return (totalCnt == 0) ? 65536 : (int) ((1.0 * sameCnt / totalCnt) * 65536);
+    }
+    
+    
+}
+
+/*
+둘 모두 공집합은 1, 유사도는 교/합
+중복되는 부분은 적은 쪽이 교, 많은 쪽이 합
+교와 합을 구한다.
+문자열을 2글자씩 끊어서 다중집합을 만든다.
+교와 합을 구한다.
+    교는 둘 모두에 있는 것.
+        같은 원소가 여러 개면 적은 수
+    합은 둘 모두를 합친 것.
+        같은 원소가 여러 개면 많은 수
+
+길이는 2~1천
+두글자는 영문만 유효, 나머지 글자는 버림
+대소문자는 비교 안함
+소수점 아래는 버림
+
+1. 접근
+    간단히 생각해보자. 
+    글자를 2글자씩 끊어서 배열을 두개 만든다.
+    Map에 넣으면?
+        aa 2 ac 1   ab 1 ba 1 bb 1 aa 1
+    A map 에서 aa 2 와 B map 에서 aa 1을 꺼낸다. 교는 aa 1, 합은 aa 2 (최종 수에 더한다.)
+    A map 에서 ac 1 과 B map에는 ac가 없다. 교는 ac 0, 합은 ac 1
+    B map에 남은 것들을 모두 합에 더한다. (a에는 없는 것들이다.)
+    
+    시간 복잡도는?
+        총 1000글자 이므로, 2글자씩 끊으면   123 = 2   1234 =3  12345 = 4 ... 따라서 총 1천 정도 1000*2
+        1000개 원소가 있는지 1000 배열을 확인한다. 1000*1000 = 100만
+        남은 1000개를 넣는다. 1000
+        시간 충분한거 같다. 계산이 맞나?
+2. 구현
+    String을 0 ~ end 까지 2글자씩 자른다.
+    유효한 값인가? -> A, B Map에 넣는다.
+    A map을 순회한다.
+        각 요소와 B map의 요소를 비교한다.
+            A에 있고, B에 있으면 교+min, 합+max
+            A에 있고, B에 없으면 교+0, 합+A
+    B map에 남은 값들을 순회한다.
+        합에 값들을 더한다.
+    자카드 유사도를 계산한다. 교/합*65000(int)
+
+
+*/

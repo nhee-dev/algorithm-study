@@ -1,0 +1,66 @@
+import java.util.*;
+
+class Solution {
+    int answer;
+    boolean[] dist;
+    public int solution(String begin, String target, String[] words) {
+        answer = 0;
+        dist = new boolean[words.length];
+        boolean isExist = false;
+        
+        // target이 있는지 확인한다. (n)
+        for(int i = 0; i < words.length; i++) {
+            if(words[i].equals(target)) isExist = true;
+        }
+        
+        // 있다면 BFS로 target까지 cnt를 찾는다.
+        if(isExist) bfs(begin, target, words);
+        
+        return answer;
+    }
+    
+    void bfs(String begin, String target, String[] words) {
+        // Q에 begin 넣는다.
+        Queue<String> Q = new LinkedList<>();
+        Q.add(begin); Q.add("0");
+        // 방문처리한다. ... 방문처리?? -> begin은 탐색대상 아니라서 방문 필요 없음
+        
+        while(!Q.isEmpty()) {
+            // Q에서 String을 꺼낸다.
+            String now = Q.poll();
+            int nowDist = Integer.parseInt(Q.poll());
+            
+            // target이면 종료한다.
+            if(now.equals(target)) {
+                answer = nowDist;
+                break;
+            }
+            // target 아니면,
+            // 50개 words를 확인한다.
+            for(int i = 0; i < words.length; i++) {
+                // dist[i]가 방문처리 되어 있으면 넘긴다.
+                if(dist[i]) continue;
+                // 방문 안했으면, 방문할 수 있는지 확인한다.
+                int cnt = 0;
+                for(int c = 0; c < begin.length(); c++) {
+                    // 10자리를 비교하며 다른 수를 센다. cnt가 2이상이면 종료; false
+                    if(words[i].charAt(c) != now.charAt(c)) {
+                        cnt++;
+                    }
+                    if(cnt > 1) break;
+                }
+                    
+                // cnt 1로 끝나면 true (0이면? 방문 없이 방문처리만?)
+                if(cnt == 1) {
+                    // 방문 및 방문처리
+                    Q.add(words[i]);
+                    dist[i] = true;
+                    Q.add((nowDist + 1) + "");
+                    
+                    System.out.println(now + " -> " + words[i]);
+                }
+            }
+
+        }
+    }
+}
