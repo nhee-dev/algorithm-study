@@ -1,0 +1,99 @@
+import java.util.Stack;
+
+class Solution {
+    int start;
+    int end;
+    int answer;
+    Stack<Character> stack;
+    
+    public int solution(String s) {
+        answer = 0;
+        
+        // s length 만큼 반복 
+        for(int i = 0; i < s.length(); i++) {
+            // start, end 세팅 - 전역 변수, 함수화 
+            setStartEndIndex(s.length(), i);
+        
+            // 제대로 된 값인지 stack으로 확인
+            checkRightString(s);
+        }
+        
+        return answer;
+    }
+    
+    // start, end 세팅
+    // start 0 -> length-1 증가 ; end lenght-1 -> 0 -> length-2 증가
+    void setStartEndIndex(int leng, int startIdx) {
+        start = startIdx;
+        end = (startIdx == 0) ? leng-1 : -1+startIdx; 
+    }
+
+    // s start 부터 end 까지 stack 으로 괄호 체크
+    void checkRightString(String s) {
+        // stack 세팅
+        stack = new Stack<>();
+        
+        // start~end stack 체크
+        // 맞으면 진행, 아니면 return
+        int idx = start;
+        int repeat = 0;
+        while(repeat < s.length()) {
+            char now = s.charAt(idx);
+            // 여는 괄호를 만나면 stack에 넣는다.
+            if(now == '(' || now == '{' || now == '[') stack.push(now);
+            // 닫는 괄호를 만나면 stack에 꺼내 확인한다.
+            // stack의 pop과 닫는 괄호가 일치하지 않으면 return;
+            else {
+                // 이전에 괄호가 없으면 종료
+                if(stack.isEmpty()) return;
+                
+                char last = stack.pop();
+                if(now == ')' && last != '(') return;
+                else if(now == '}' && last != '{') return;
+                else if(now == ']' && last != '[') return;
+
+            }
+            
+            // 올바른 괄호라면 다음 진행
+            // idx가 leng 넘어가면 0으로 바꾼다.
+            idx = (idx+1 < s.length()) ? idx+1 : 0  ;
+            repeat++;
+        }        
+        // 다돌았으면 answer++ 
+				if(stack.isEmpty())
+		        answer++;
+    }
+    
+}
+
+/*
+1. 접근
+    괄호로 이루어진 문자열이 주어진다.
+    왼쪽으로 0<S 회전 시킨다 (s 길이 미만)
+    매번 올바른 괄호 문자열이 되는지 확인 한다.
+    
+    왼쪽으로 회전시킨다.
+        - 새로운 문자열을 만든다? 
+            1000개의 새로운 문자열을 만들어야한다.
+        - Index를 변경한다
+            왼쪽으로 1 회전 시키면, index 1 시작, 0 종료 까지가 새로운 문자가 된다.
+            따라서 1 회전시킬 때 마다 시작 index + 1, 종료 index + 1 을 해주면 된다.
+                배열 길이에 도달했고, 아직 end에 도달하지 않았으면 -1로 index를 바꾼다.*
+    올바른 괄호 문자열의 확인
+        - Stack을 이용한다.
+            1000번의 회전 * stack에 넣고 확인에 1000 = 100만
+    
+2. 구현
+    stack 생성
+    start index, end index를 정한다. (s length 만큼 반복한다.)
+        start index는 length-1 까지 증가
+        end index는 length-1 -> 0~ length-2까지 증가
+    
+    start index 부터 s를 탐색한다.
+        여는 괄호를 만나면 stack에 넣는다.
+        닫는 괄호를 만나면 stack에서 뺴서 같은지 확인한다.
+            같으면 계속,
+            다르면 종료, start index 증가 후 진행한다.
+        마지막 index 까지 true 이면 answer ++ 한다.
+    
+*/
