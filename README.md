@@ -103,11 +103,11 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪<br/>🟤🟤</td>
   </tr>     
   <tr>
-    <td align="center"><b>String</b></td> <!-- 5/37 -->
+    <td align="center"><b>String</b></td> <!-- 5/39 -->
     <td align="center">⚪⚪<br/>🟤🟤</td>
     <td align="center">🟡<br/>⚪⚪⚪⚪⚪<br/>⚪<br/>🟤</td>
     <td align="center">🟡🟡<br/>⚪⚪⚪<br/>🟤🟤🟤🟤🟤</td>        
-    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪<br/>🟤🟤</td>
+    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪<br/>🟤🟤🟤🟤</td>
     <td align="center">-</td>    
     <td align="center">🟡🟡🟡<br/>⚪</td>             
   </tr>             
@@ -121,11 +121,11 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪</td>   
   </tr>  
   <tr>
-    <td align="center"><b>완전탐색</b></td> <!-- 5/26 -->
+    <td align="center"><b>완전탐색</b></td> <!-- 5/27 -->
     <td align="center">⚪⚪⚪⚪<br/>🟤🟤</td>
     <td align="center">⚪⚪<br/>🟤🟤🟤</td>
     <td align="center">⚪</td>        
-    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪</td>
+    <td align="center">🟡🟡🟡🟡<br/>⚪⚪⚪⚪<br/>🟤</td>
     <td align="center">-</td>                 
     <td align="center">⚪⚪⚪<br/>🟤🟤🟤</td>
   </tr>         
