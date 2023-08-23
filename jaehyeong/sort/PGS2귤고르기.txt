@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int k, int[] tangerine) {
+        int answer = 0;
+        
+        // 귤배열 돌며 HashMap으로 카운팅한다.
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < tangerine.length; i++) {
+            map.put(tangerine[i], map.getOrDefault(tangerine[i], 0) + 1);
+        }
+        
+        // counting을 정렬한다.
+        ArrayList<Integer> arr = new ArrayList<>(map.values());
+        Collections.sort(arr, Collections.reverseOrder());
+        
+        // counting을 돌며 answer++하고, k를 차감한다.
+        // K가 0이하가 되면 종료
+        for(int i = 0; i < arr.size(); i++) {
+            k -= arr.get(i);
+            answer++;
+            if(k <= 0) break;
+        }
+        
+        
+        return answer;
+    }
+}
+
+/*
+1. 접근
+    가장 많은 종류의 귤부터 차례대로 넣는다.
+    더이상 넣을 수 없으면 종료한다.
+    
+    가장 많은 종류의 귤은?
+        1. HashMap으로 카운팅 -> Array로 만들어 정렬
+            HashMap 데이터 추가, 삭제, 접근은 o(1) 수준
+            귤 Arr도는데 O(n), 정렬에 O(nlogn), 계산에 최대 O(n)
+            따라서 10만long10만 ... 시간 충분
+
+2. 구현 흐름
+    귤 배열 돌며 counting -> 정렬 -> 큰 것 부터 k에서 차감
+    
+*/
