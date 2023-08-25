@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Solution {
+    int answer;
+    int[][] dp;
+    int solution(int[][] land) {
+        answer = 0;
+        dp = new int[land.length][4];
+        dpAlgorithm(land);
+        
+        for(int i = 0; i < 4; i++) answer = Math.max(answer, dp[land.length-1][i]);
+        return answer;
+    }
+    
+    void dpAlgorithm(int[][] land) {
+        for(int i = 0; i < 4; i ++) {
+            dp[0][i] = land[0][i];
+        }
+        
+        for(int depth = 1; depth < land.length; depth++) {
+            for(int col = 0; col < 4; col++) {
+                dp[depth][col] = land[depth][col] + maxCol(depth-1, col);
+            }
+        }
+    }
+    
+    int maxCol(int depth, int col) {
+        int max = 0;
+        for(int i = 0; i< 4; i++) {
+            if(col == i) continue;
+            max = Math.max(dp[depth][i], max);
+        }
+        return max;
+    }
+
+}
+
+/*
+ 마지막 index 0, 1, 2, 3 마다 값을 구한다.
+ dp[n][k] = dp[n-1]에서 index k가 아닌 가장 큰 값
+ ... dp[0][k]는 미리 입력 되어 있음
+ 입력되어 있지 않은 경우 값을 구하고, 입력되어 있으면 값 구하지 않음
+ 
+ bottom up 방식은? dp[0][k]는 미리 입력
+ 각 위치마다 dp[depth][k] = dp[depth-1][k아닌 가장 큰 값 j]  + dp[depth-2][j아닌 가장 큰 값]
+ k 아닌 가장 큰 값 : for 4 로 확인
+
+
+*/
