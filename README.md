@@ -85,14 +85,23 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">🟢<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>🟡🟡🟡🟡🟡<br/>⚪⚪⚪</td>
   </tr>
   <tr>
-    <td align="center"><b>Sort</b></td> <!-- 6/30 -->
+    <td align="center"><b>Sort</b></td> <!-- 6/31 -->
     <td align="center">⚪</td>
     <td align="center">⚪⚪<br/>🟤</td>
     <td align="center">⚪</td>        
-    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪<br/>🟤🟤</td>
+    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪⚪⚪⚪<br/>⚪⚪<br/>🟤🟤</td>
     <td align="center">⚪</td>          
     <td align="center">🟤</td>
   </tr>  
+  <tr>
+    <td align="center"><b>Stack/Q</b></td> <!-- 6/17 -->
+    <td align="center">⚪</td>
+    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪</td>
+    <td align="center">🟡<br/>⚪⚪<br/>🟤</td>        
+    <td align="center">⚪⚪</td>
+    <td align="center">⚪</td>    
+    <td align="center">⚪<br/>🟤</td>              
+  </tr>         
   <tr>
     <td align="center"><b>Math</b></td> <!-- 6/16 -->
     <td align="center">🟤🟤🟤</td>
@@ -130,15 +139,6 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">⚪⚪⚪<br/>🟤🟤🟤</td>
   </tr>         
   <tr>
-    <td align="center"><b>Stack/Q</b></td> <!-- 6/16 -->
-    <td align="center">⚪</td>
-    <td align="center">⚪⚪⚪⚪⚪<br/>⚪⚪</td>
-    <td align="center">🟡<br/>⚪⚪<br/>🟤</td>        
-    <td align="center">⚪</td>
-    <td align="center">⚪</td>    
-    <td align="center">⚪<br/>🟤</td>              
-  </tr> 
-  <tr>
     <td align="center"><b>이분탐색</b></td> <!-- 4/21 -->
     <td align="center">-</td>
     <td align="center">🟡</td>
@@ -157,11 +157,11 @@ git commit -m "[No.#] BOJ99999 - 문제이름 / 난이도 / 알고리즘유형"
     <td align="center">-</td>    
   </tr>        
   <tr>
-    <td align="center"><b>DP</b></td> <!-- 4/10 -->
+    <td align="center"><b>DP</b></td> <!-- 4/11 -->
     <td align="center">⚪<br/>🟤</td>
     <td align="center">-</td>
     <td align="center">🟡🟡<br/>⚪⚪</td>        
-    <td align="center">-</td>
+    <td align="center">⚪</td>
     <td align="center">⚪⚪</td>    
     <td align="center">🟡⚪</td>    
   </tr>
